@@ -2,7 +2,6 @@
     "name": "automation-store",
     "version": "1.0.0",
     "description": "",
-    "main": "src/app.js",
     "scripts": {
         "build": "npm run clean && parcel build --no-optimize --no-scope-hoist ./src/view/index.pug",
         "clean": "rimraf dist && rimraf ./.parcel-cache",
