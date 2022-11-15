@@ -1,0 +1,48 @@
+extends ../templates/base
+
+block contents
+    section.half-cover.h-100
+        .container.h-100
+            .vstack.gap-4.py-5.h-100
+                .d-flex.justify-content-between.align-items-center
+                    h2.fw-bold 파일 등록
+                    .hstack.gap-3
+                        a.btn.btn-primary(href="#") 저장
+                        a.btn.btn-secondary(href="/src/view/index.pug") 목록
+                .card.rounded-4.h-100
+                    .card-body
+                        .vstack.gap-4
+                            .row.row-cols-1.row-cols-lg-2.g-4
+                                .col
+                                    .vstack.gap-2
+                                        label.form-label(for="fileTitle") 제목
+                                        input#fileTitle.form-control(
+                                            type="text"
+                                        )
+                                .col
+                                    .vstack.gap-2
+                                        label.form-label(for="fileTypeRadio") 구분
+                                        #fileTypeRadio.btn-group(role="group")
+                                            input#typePrivate.btn-check(
+                                                type="radio",
+                                                name="fileTypeRadio",
+                                                autocomplete="off",
+                                                checked
+                                            )
+                                            label.btn.btn-outline-primary(
+                                                for="typePrivate"
+                                            ) Private
+                                            input#typePublic.btn-check(
+                                                type="radio",
+                                                name="fileTypeRadio",
+                                                autocomplete="off"
+                                            )
+                                            label.btn.btn-outline-primary(
+                                                for="typePublic"
+                                            ) Public
+                            .vstack.gap-2
+                                label.form-label(for="fileAttach") 파일
+                                input#fileAttach.form-control(type="file")
+                            .vstack.gap-2
+                                label.form-label(for="fileExplain") 설명
+                                textarea#fileExplain.form-control(rows="3")

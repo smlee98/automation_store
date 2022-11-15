@@ -1,0 +1,21 @@
+.half-cover {
+    position: relative;
+}
+
+.half-cover:after {
+    background-color: #41527d;
+    content: "";
+    display: block;
+    height: 27rem;
+    left: 0;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.idx-input {
+    background-color: #e9ecef;
+    opacity: 1;
+}

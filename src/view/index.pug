@@ -1,0 +1,73 @@
+extends ../templates/base
+
+block contents
+    section.half-cover.h-100
+        .container.h-100
+            .vstack.gap-4.py-5.h-100
+                .d-flex.justify-content-between.align-items-center
+                    h2.fw-bold 파일 목록
+                    .hstack.gap-3
+                        .form-check.form-switch
+                            input#viewOnlyMine.form-check-input(
+                                type="checkbox",
+                                role="switch"
+                            )
+                            label.form-check-label(for="viewOnlyMine") 내 파일만 보기
+                        a.btn.btn-primary(href="/src/view/board-new.pug") 등록
+                        button.btn.btn-outline-danger 삭제
+                .card.rounded-4.h-100
+                    .card-body
+                        .table-responsive
+                            table#fileList.table.table-bordered
+                                thead
+                                    tr
+                                        th
+                                            .form-check
+                                                input#checkAll.form-check-input(
+                                                    type="checkbox",
+                                                    name="boardCheck",
+                                                    value="checkAll"
+                                                )
+                                        th #[span 번호]
+                                        th #[span 제목]
+                                        th #[span 구분]
+                                        th #[span 등록자]
+                                        th #[span 등록시간]
+                                tbody
+                                    tr
+                                        td
+                                            .form-check
+                                                input#checkbox1.form-check-input.board-check(
+                                                    type="checkbox",
+                                                    value="checkbox1"
+                                                )
+                                        td #[span 1]
+                                        td #[a(href="/src/view/board-detail.pug") 샘플 태스크 001]
+                                        td #[span Private]
+                                        td #[span 이승민]
+                                        td #[span 2022-11-14 17:12:34]
+                                    tr
+                                        td
+                                            .form-check
+                                                input#checkbox1.form-check-input.board-check(
+                                                    type="checkbox",
+                                                    value="checkbox1"
+                                                )
+                                        td #[span 2]
+                                        td #[a(href="/src/view/board-detail.pug") 샘플 태스크 002]
+                                        td #[span Public]
+                                        td #[span 정승민]
+                                        td #[span 2022-11-13 12:34:56]
+                                    tr
+                                        td
+                                            .form-check
+                                                input#checkbox1.form-check-input.board-check(
+                                                    type="checkbox",
+                                                    value="checkbox1"
+                                                )
+                                        td #[span 3]
+                                        td #[a(href="/src/view/board-detail.pug") 샘플 태스크 003]
+                                        td #[span Private]
+                                        td #[span 최승민]
+                                        td #[span 2022-11-11 11:11:11]
+                        +pagination("mt-3")

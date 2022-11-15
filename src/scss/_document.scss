@@ -1,0 +1,83 @@
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+@mixin mobile {
+    @include media-breakpoint-down(lg) {
+        @content;
+    }
+}
+
+html,
+body {
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    -ms-overflow-style: none; // IE, Edge
+    scrollbar-width: none; // Firefox
+    word-break: keep-all;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    &::-webkit-scrollbar {
+        display: none; // Chrome , Safari , Opera
+    }
+}
+
+a,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+textarea {
+    resize: none !important;
+}
+
+.vsc-controller {
+    display: none;
+}
+
+/* Button */
+.btn {
+    &.btn-purple {
+        --#{$prefix}btn-color: #{$white};
+        --#{$prefix}btn-hover-color: #{$white};
+    }
+    &.btn-outline-purple {
+        --#{$prefix}btn-hover-color: #{$white};
+    }
+}
+
+/* Text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+/* Card */
+.card {
+    .card-body {
+        padding: 2.5rem;
+    }
+}
+
+/* Legend */
+legend {
+    float: left;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: inherit;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+}

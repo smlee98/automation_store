@@ -1,0 +1,21 @@
+// color
+$theme-colors: map-merge(
+    $theme-colors,
+    (
+        "purple": $purple,
+    )
+);
+
+// navbar
+$navbar-padding-y: $spacer * 1.25;
+
+// list-group
+$list-group-item-padding-x: 0;
+$list-group-item-padding-y: $spacer * 1.25;
+$list-group-color: $white;
+$list-group-bg: transparent;
+$list-group-border-color: rgba($white, 0.5);
+
+// button
+$btn-border-radius: $border-radius * 1.5;
+$btn-border-radius-lg: $border-radius-lg * 1.5;
