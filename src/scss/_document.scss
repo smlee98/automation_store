@@ -43,17 +43,6 @@ textarea {
     display: none;
 }
 
-/* Button */
-.btn {
-    &.btn-purple {
-        --#{$prefix}btn-color: #{$white};
-        --#{$prefix}btn-hover-color: #{$white};
-    }
-    &.btn-outline-purple {
-        --#{$prefix}btn-hover-color: #{$white};
-    }
-}
-
 /* Text */
 h1,
 h2,

@@ -1,11 +1,3 @@
-// color
-$theme-colors: map-merge(
-    $theme-colors,
-    (
-        "purple": $purple,
-    )
-);
-
 // navbar
 $navbar-padding-y: $spacer * 1.25;
 
