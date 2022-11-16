@@ -1,27 +1,35 @@
 extends ../templates/base
 
 block contents
-    section.half-cover.h-100
-        .container.h-100
-            .vstack.gap-4.py-5.h-100
-                .d-flex.justify-content-between.align-items-center
-                    h2.fw-bold 파일 등록
-                    .hstack.gap-3
-                        a.btn.btn-primary(href="#") 저장
-                        a.btn.btn-secondary(href="/src/view/index.pug") 목록
-                .card.rounded-4.h-100
-                    .card-body
+    +breadcrumb(["Automation Store", "등록"])
+    section.half-cover
+        .container
+            .vstack.gap-4.py-4
+                h2.fw-bold Automation Store 등록
+                .card.rounded-4
+                    .card-body.p-5
+                        span.d-block.text-end.text-danger #[sup ●] 항목은 필수 입력 사항입니다.
                         .vstack.gap-4
-                            .row.row-cols-1.row-cols-lg-2.g-4
-                                .col
+                            .row.g-4
+                                .col-12.col-lg-6
                                     .vstack.gap-2
-                                        label.form-label(for="fileTitle") 제목
-                                        input#fileTitle.form-control(
-                                            type="text"
-                                        )
-                                .col
+                                        label.form-label.fw-bold(
+                                            for="fileCategory"
+                                        ) 분류 #[sup.text-danger ●]
+                                        select#fileCategory.form-select
+                                            option(value="all") 전체
+                                .col-12.col-lg-6
                                     .vstack.gap-2
-                                        label.form-label(for="fileTypeRadio") 구분
+                                        label.form-label.fw-bold(
+                                            for="fileSolution"
+                                        ) 솔루션 #[sup.text-danger ●]
+                                        select#fileSolution.form-select
+                                            option(value="all") 전체
+                                .col.col-12.col-lg-6
+                                    .vstack.gap-2
+                                        label.form-label.fw-bold(
+                                            for="fileTypeRadio"
+                                        ) 구분 #[sup.text-danger ●]
                                         #fileTypeRadio.btn-group(role="group")
                                             input#typePrivate.btn-check(
                                                 type="radio",
@@ -40,9 +48,54 @@ block contents
                                             label.btn.btn-outline-primary(
                                                 for="typePublic"
                                             ) Public
+                                .col-12.col-lg-6
+                                    .vstack.gap-2
+                                        label.form-label.fw-bold(
+                                            for="fileVersion"
+                                        ) 버전 #[sup.text-danger ●]
+                                        input#fileVersion.form-control(
+                                            type="text"
+                                        )
+                                .col-12
+                                    .vstack.gap-2
+                                        label.form-label.fw-bold(
+                                            for="fileTitle"
+                                        ) 제목 #[sup.text-danger ●]
+                                        input#fileTitle.form-control(
+                                            type="text"
+                                        )
                             .vstack.gap-2
-                                label.form-label(for="fileAttach") 파일
-                                input#fileAttach.form-control(type="file")
+                                label.form-label.fw-bold(for="fileEditor") 내용
+                                #fileEditor.editor
                             .vstack.gap-2
-                                label.form-label(for="fileExplain") 설명
-                                textarea#fileExplain.form-control(rows="3")
+                                label.form-label.fw-bold(for="fileAttach") 첨부파일
+                                .card
+                                    .card-header
+                                        .d-flex.justify-content-between.align-items-center.w-100
+                                            .hstack.gap-2
+                                                #filecount.opacity-50 #[span 총] #[span#nowcount 0개]#[span#maxcount 0개]
+                                                span ·
+                                                #filesize #[span#nowsize 0.00MB]#[span#maxsize 0MB]
+                                                input#input-attach.d-none(
+                                                    type="file",
+                                                    name="file",
+                                                    multiple=""
+                                                )
+                                            button#button-attach.btn.btn-primary.btn-sm(
+                                                type="button"
+                                            ) 파일추가 #[i.bi.bi-plus-circle]
+                                    .card-body.p-0.scroll-item
+                                        ul#dropbox.list-group.list-group-flush
+                            .vstack.gap-2
+                                label.form-label.fw-bold(for="fileHashtag") 해시태그
+                                input.tagify.form-control(type="text")
+                            .hstack.justify-content-end.gap-3
+                                a.btn.btn-board.btn-outline-primary(href="#") 임시저장
+                                a.btn.btn-board.btn-outline-primary(href="#") 미리보기
+                                a.btn.btn-board.btn-primary(href="#") 저장
+                a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록
+
+block scripts
+    script(src="/src/js/AOEditor.js", type="module") 
+    script(src="/src/js/Tagify.js", type="module")
+    script(src="/src/lib/dropbox.js", type="module")

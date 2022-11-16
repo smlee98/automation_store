@@ -1,105 +1,74 @@
 extends ../templates/base
 
 block contents
-    section.half-cover.h-100
-        .container.h-100
-            .vstack.gap-4.py-5.h-100
-                .d-flex.justify-content-between.align-items-center
-                    h2.fw-bold 파일 히스토리
-                    .hstack.gap-3
-                        a.btn.btn-primary(href="#") 저장
-                        a.btn.btn-secondary(href="/src/view/index.pug") 목록
-                .card.rounded-4.h-100
-                    .card-body
+    +breadcrumb(["Automation Store"])
+    section.half-cover
+        .container
+            .vstack.gap-4.py-4
+                h2.fw-bold Automation Store
+                .card.rounded-4
+                    .card-body.p-5
                         .vstack.gap-4
-                            .row.row-cols-1.row-cols-lg-2.g-4
-                                .col
-                                    .vstack.gap-2
-                                        label.form-label(for="fileTitle") 제목
-                                        input#fileTitle.form-control(
-                                            type="text"
+                            .d-flex.justify-content-between.align-items-center
+                                .vstack.gap-2
+                                    h5.text-primary.fw-bold 에셋
+                                    .hstack.gap-2.text-muted
+                                        span 기타
+                                        .vr
+                                        span RPA
+                                    h4.fw-bold.card-title 날짜 계산기
+                                button.btn.btn-board.btn-outline-primary #[i.bi.bi-download] 다운로드
+                            hr.my-0
+                            .d-flex.justify-content-between.align-items-center
+                                .hstack.gap-2
+                                    span.fw-bold admin
+                                    span ·
+                                    span.text-muted 2022-11-16
+                                .hstack.gap-1.text-muted
+                                    i.bi.bi-download
+                                    span 20
+                            hr.my-0
+                            p.text-muted
+                                | Javascript를 이용한 날짜 계산 Sample Task입니다. #[br]
+                                | ①초라도 안보이면 ②렇게 초조한데 #[br]
+                                | ③초는 어떻게 기다려 (이야 이야 이야 이야) #[br]
+                                | ④랑해 널 사랑해 ⑤늘은 말할거야 #[br]
+                                | ⑥십억 지구에서 널 만난건 #[br]
+                                | ⑦럭키야 사랑해 요기조기 한눈팔지 말고 나를봐 #[br]
+                                | 좋아해 나를 향해 웃는 미소 매일매일 보여줘 #[br]
+                                | ⑧딱팔딱 뛰는 가슴 ⑨해줘 오 내마음 #[br]
+                                | ⑩년이 가도 너를 사랑해 언제나 이 맘 변치 않을게
+                .card.rounded-4
+                    .card-body.p-4
+                        .vstack.gap-4
+                            legend 댓글 #[b.text-primary 2]
+                            .card.border-0.bg-light
+                                .card-body
+                                    .vstack.gap-3
+                                        h5.fw-bold admin
+                                        textarea.form-control(
+                                            rows="3",
+                                            placeholder="댓글 입력"
                                         )
-                                .col
-                                    .vstack.gap-2
-                                        label.form-label(for="fileTypeRadio") 구분
-                                        #fileTypeRadio.btn-group(role="group")
-                                            input#typePrivate.btn-check(
-                                                type="radio",
-                                                name="fileTypeRadio",
-                                                autocomplete="off",
-                                                checked
-                                            )
-                                            label.btn.btn-outline-primary(
-                                                for="typePrivate"
-                                            ) Private
-                                            input#typePublic.btn-check(
-                                                type="radio",
-                                                name="fileTypeRadio",
-                                                autocomplete="off"
-                                            )
-                                            label.btn.btn-outline-primary(
-                                                for="typePublic"
-                                            ) Public
-                            .vstack.gap-2
-                                label.form-label(for="fileAttach") 파일
-                                input#fileAttach.form-control(type="file")
-                            .vstack.gap-2
-                                label.form-label(for="fileExplain") 설명
-                                textarea#fileExplain.form-control(rows="3")
-                            hr
-                            legend 히스토리
-                            ul#fileHistory.vstack.gap-5.p-0
-                                li.row.g-2.g-md-3.border.rounded-4.p-4
-                                    .col-2.col-lg-1.order-1
-                                        input.idx-input.form-control.text-center(
-                                            type="text",
-                                            value="3",
-                                            readonly="true"
-                                        )
-                                    .col-10.col-lg-7.col-form-label.order-2
-                                        a(href="#") 사내시스템 점검.zip
-                                    .col-12.col-lg-4.col-form-label.order-4.order-lg-3
-                                        .hstack.gap-2.justify-content-end
-                                            span.text-muted 2022-08-10 11:21:16
-                                            i.bi.bi-x-lg.text-danger
-                                    .col-12.order-3.order-lg-4
-                                        input.form-control(
-                                            type="text",
-                                            placeholder="설명"
-                                        )
-                                li.row.g-2.g-md-3.border.rounded-4.p-4
-                                    .col-2.col-lg-1.order-1
-                                        input.idx-input.form-control.text-center(
-                                            type="text",
-                                            value="2",
-                                            readonly="true"
-                                        )
-                                    .col-10.col-lg-7.col-form-label.order-2
-                                        a(href="#") 카카오맵 길찾기.zip
-                                    .col-12.col-lg-4.col-form-label.order-4.order-lg-3
-                                        .hstack.gap-2.justify-content-end
-                                            span.text-muted 2022-08-10 11:21:16
-                                            i.bi.bi-x-lg.text-danger
-                                    .col-12.order-3.order-lg-4
-                                        input.form-control(
-                                            type="text",
-                                            placeholder="설명"
-                                        )
-                                li.row.g-2.g-md-3.border.rounded-4.p-4
-                                    .col-2.col-lg-1.order-1
-                                        input.idx-input.form-control.text-center(
-                                            type="text",
-                                            value="1",
-                                            readonly="true"
-                                        )
-                                    .col-10.col-lg-7.col-form-label.order-2
-                                        a(href="#") 실행모드 설정.zip
-                                    .col-12.col-lg-4.col-form-label.order-4.order-lg-3
-                                        .hstack.gap-2.justify-content-end
-                                            span.text-muted 2022-08-10 11:21:16
-                                            i.bi.bi-x-lg.text-danger
-                                    .col-12.order-3.order-lg-4
-                                        input.form-control(
-                                            type="text",
-                                            placeholder="설명"
-                                        )
+                                        .hstack.gap-3.justify-content-end
+                                            #typing #[span#nowTyping 0] / #[span#maxTyping.text-muted 4000]
+                                            button.btn.btn-sm.btn-outline-primary #[i.bi.bi-pencil] 등록
+                            .card
+                                .card-body
+                                    .vstack.gap-3
+                                        .d-flex.justify-content-between.align-items-center
+                                            h5.fw-bold Seungmin Lee
+                                            .hstack.gap-2
+                                                button.btn.btn-sm.btn-outline-secondary 수정
+                                                button.btn.btn-sm.btn-outline-secondary 삭제
+                                        p.mb-0 감사합니다.
+                            .card
+                                .card-body
+                                    .vstack.gap-3
+                                        .d-flex.justify-content-between.align-items-center
+                                            h5.fw-bold Seungmin Kim
+                                            .hstack.gap-2
+                                                button.btn.btn-sm.btn-outline-secondary 수정
+                                                button.btn.btn-sm.btn-outline-secondary 삭제
+                                        p.mb-0 잘 사용하겠습니다.
+                a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록

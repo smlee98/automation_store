@@ -1,3 +1,13 @@
+mixin breadcrumb(path)
+    nav.border-bottom.bg-white.sticky-top(aria-label="breadcrumb")
+        .container.h-100
+            ol.row.g-0.breadcrumb.h-100
+                li.col-auto.breadcrumb-item
+                    img(src="/src/assets/images/ic_home.png")
+                each val in path
+                    li.col-auto.breadcrumb-item
+                        span= val
+
 mixin pagination(option)
     nav(aria-label="pagination", class=option)
         ul.pagination.justify-content-center
