@@ -18,13 +18,17 @@ block contents
                             .row.g-3
                                 .col-12.col-lg-3
                                     .vstack.gap-2
-                                        span.text-muted 게시글 작성
-                                        h4.fw-bold.text-primary 16
+                                        span.text-muted Public 게시글 작성
+                                        h4.fw-bold.text-primary 13
+                                .col-12.col-lg-3
+                                    .vstack.gap-2
+                                        span.text-muted Private 게시글 작성
+                                        h4.fw-bold.text-primary 3
                                 //- .col-12.col-lg-3
                                 //-     .vstack.gap-2
                                 //-         span.text-muted 댓글 작성
                                 //-         h4.fw-bold.text-primary 0
-                                .col-12.col-lg-9
+                                .col-12.col-lg-6
                                     .vstack.gap-2
                                         span.text-muted 자주 사용하는 해시태그
                                         .hstack.gap-2
@@ -32,7 +36,14 @@ block contents
                                             span.badge.rounded-pill.text-bg-light #headless
                                             span.badge.rounded-pill.text-bg-light #script
                                             span.badge.rounded-pill.text-bg-light #simple
-                legend 내 게시글
+                .d-flex.justify-content-between.align-items-center
+                    legend 내 게시글
+                    .form-check.form-switch
+                        input#onlyBoard.form-check-input(
+                            type="checkbox",
+                            role="switch"
+                        )
+                        label.form-check-label.text-nowrap(for="onlyBoard") Private 게시글만 표시
                 .row.row-cols-1.row-cols-md-2.row-cols-lg-4.g-4
                     .col
                         .card.card-item
@@ -51,7 +62,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -75,7 +87,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -99,7 +112,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Private
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -123,7 +137,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -147,7 +162,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Private
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -171,7 +187,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -195,7 +212,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Private
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -219,7 +237,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -243,7 +262,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -267,7 +287,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -291,7 +312,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
@@ -315,7 +337,8 @@ block contents
                                         span.badge.rounded-pill.text-bg-light #script
                                         span.badge.rounded-pill.text-bg-light #simple
                                 hr
-                                .hstack.gap-3.justify-content-end.text-muted.small
+                                .hstack.gap-3.justify-content-between.text-muted.small
+                                    span.badge.rounded-pill.text-bg-secondary Public
                                     .hstack.gap-1
                                         i.bi.bi-download
                                         span 20
