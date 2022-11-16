@@ -30,17 +30,17 @@ block contents
                     #smartFilter.accordion
                         .accordion-item
                             h2#filterHead.accordion-header
-                                button.accordion-button(
+                                button.accordion-button.collapsed(
                                     type="button",
                                     data-bs-toggle="collapse",
                                     data-bs-target="#filterBody",
-                                    aria-expanded="true",
+                                    aria-expanded="false",
                                     aria-controls="filterBody"
                                 )
                                     .hstack.gap-1
                                         i.bi.bi-funnel
                                         span 스마트 필터
-                            #filterBody.accordion-collapse.collapse.show(
+                            #filterBody.accordion-collapse.collapse(
                                 aria-labelledby="filterHead",
                                 data-bs-parent="#smartFilter"
                             )

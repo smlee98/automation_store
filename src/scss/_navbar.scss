@@ -3,6 +3,10 @@ $breadcrumb-height: 3rem;
 
 nav.navbar {
     height: $navbar-height !important;
+
+    #nav-profile {
+        cursor: pointer;
+    }
 }
 
 #logo {
