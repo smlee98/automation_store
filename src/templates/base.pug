@@ -7,14 +7,13 @@ html(lang="ko")
         block head
             title= "Automation Store"
     body
-        .vstack.vw-100.vh-100
-            include partials/preloader
+        include partials/preloader
 
-            //- HEADER START ===========
-            include partials/header
-            //- MAIN START ===========
-            main.flex-grow-1
-                block contents
+        //- HEADER START ===========
+        include partials/header
+        //- MAIN START ===========
+        main
+            block contents
 
         //- SCRIPT START ===========
         script(src="/src/js/main.js", type="module")
