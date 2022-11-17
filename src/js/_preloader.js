@@ -1,6 +1,6 @@
 const fillLoader = (value) => {
-    const loader = document.querySelector("#preloader .bar");
-    loader.style.width = value;
+    const loadingBar = document.querySelector("#preloader .bar");
+    loadingBar.style.width = value;
 };
 
 const preloader = () => {

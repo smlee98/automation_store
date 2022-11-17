@@ -9,9 +9,5 @@ window.bootstrap = bootstrap;
 /* Preloader */
 preloader();
 
-/* Cookie */
-getCookie();
-setCookie();
-
 /* InputItems */
 checkItems();
