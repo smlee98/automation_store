@@ -6,27 +6,24 @@ block contents
         .container
             .vstack.gap-4.py-4
                 h2.fw-bold Automation Store
-                .card.rounded-4
+                .card
                     .card-body.p-5
-                        .vstack.gap-4
-                            .d-flex.justify-content-between.align-items-center
-                                .vstack.gap-2
-                                    h5.text-primary.fw-bold 에셋
-                                    .hstack.gap-2.text-muted
-                                        span 기타
-                                        .vr
-                                        span RPA
-                                    h4.fw-bold.card-title 날짜 계산기
-                                button.btn.btn-board.btn-outline-primary #[i.bi.bi-download] 다운로드
-                            hr.my-0
-                            .d-flex.justify-content-between.align-items-center
-                                .hstack.gap-2
-                                    span.fw-bold admin
-                                    span ·
-                                    span.text-muted 2022-11-16
+                        .vstack.gap-3
+                            .vstack.gap-2
+                                h5.text-primary.fw-bold 에셋
+                                .hstack.gap-2.text-muted
+                                    span 기타
+                                    .vr
+                                    span RPA
+                                h4.fw-bold 날짜 계산기
+                            .hstack.gap-2.small
+                                span.fw-bold admin
+                                .vr
                                 .hstack.gap-1.text-muted
                                     i.bi.bi-download
                                     span 20
+                                .vr
+                                span.text-muted 2022-11-16
                             hr.my-0
                             p.text-muted
                                 | Javascript를 이용한 날짜 계산 Sample Task입니다. #[br]
@@ -38,6 +35,10 @@ block contents
                                 | 좋아해 나를 향해 웃는 미소 매일매일 보여줘 #[br]
                                 | ⑧딱팔딱 뛰는 가슴 ⑨해줘 오 내마음 #[br]
                                 | ⑩년이 가도 너를 사랑해 언제나 이 맘 변치 않을게
+                            button.btn.btn-board.btn-outline-primary.align-self-end
+                                .hstack.gap-2.justify-content-center
+                                    i.bi.bi-download
+                                    span 다운로드
                 //- .card.rounded-4
                 //-     .card-body.p-4
                 //-         .vstack.gap-4

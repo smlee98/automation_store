@@ -8,9 +8,11 @@ header.border-bottom.sticky-top
                         span.dropdown-toggle(data-bs-toggle="dropdown") #[b admin] #[span (관리자)]
                         ul.dropdown-menu.dropdown-menu-end
                             a.dropdown-item(href="/src/view/mypage.pug")
-                                i.bi.bi-person.fs-5.lh-base.me-1
-                                span 마이페이지
+                                .hstack.gap-2
+                                    i.bi.bi-person.fs-5.lh-base
+                                    span 마이페이지
                             a.dropdown-item(href="/src/view/login.pug")
-                                i.bi.bi-box-arrow-right.fs-5.lh-base.me-1
-                                span 로그아웃
+                                .hstack.gap-2
+                                    i.bi.bi-box-arrow-right.fs-5.lh-base
+                                    span 로그아웃
                     button.btn.btn-light.d-none.d-lg-inline-flex.align-items-center #[img.me-2(src="/src/assets/images/logo_ao3.png", alt="logo_ao3")] #[span 매니저로 이동]
