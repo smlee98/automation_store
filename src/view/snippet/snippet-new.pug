@@ -1,0 +1,85 @@
+extends ../../templates/base
+
+block contents
+    +breadcrumb(["Automation Store", "등록"])
+    section
+        .container
+            .vstack.gap-4.py-4
+                h2.fw-bold 코드 조각 등록
+                .card
+                    .card-body.p-5
+                        span.d-block.text-end.text-danger #[sup *] 항목은 필수 입력 사항입니다.
+                        .vstack.gap-4
+                            .row.g-4
+                                .col-12.col-lg-6
+                                    .vstack.gap-2
+                                        label.form-label.fw-bold.required(
+                                            for="fileTitle"
+                                        ) 제목
+                                        input#fileTitle.form-control(
+                                            type="text"
+                                        )
+                                .col.col-12.col-lg-6
+                                    .vstack.gap-2
+                                        label.form-label.fw-bold.required(
+                                            for="fileTypeRadio"
+                                        ) 구분
+                                        #fileTypeRadio.btn-group(role="group")
+                                            input#typePrivate.btn-check(
+                                                type="radio",
+                                                name="fileTypeRadio",
+                                                autocomplete="off",
+                                                checked
+                                            )
+                                            label.btn.btn-outline-primary(
+                                                for="typePrivate"
+                                            ) Private
+                                            input#typePublic.btn-check(
+                                                type="radio",
+                                                name="fileTypeRadio",
+                                                autocomplete="off"
+                                            )
+                                            label.btn.btn-outline-primary(
+                                                for="typePublic"
+                                            ) Public
+                                .col-12
+                                    .vstack.gap-2
+                                        label.form-label.fw-bold.required(
+                                            for="fileExplain"
+                                        ) 설명
+                                        textarea#fileExplain.form-control(
+                                            rows="5"
+                                        )
+                            .vstack.gap-2
+                                label.form-label.fw-bold(for="fileEditor") 내용
+                                pre
+                                    code.language-csharp int a = 1;
+                                textarea.prism-live.language-csharp
+                            .vstack.gap-2
+                                .d-flex.justify-content-between.align-items-center.form-label
+                                    label.fw-bold(for="fileAttach") 첨부파일
+                                    button#button-attach.btn.btn-primary.btn-sm(
+                                        type="button"
+                                    ) 파일추가 #[i.bi.bi-plus-circle]
+                                .card
+                                    .card-header
+                                        .d-flex.justify-content-end.align-items-center.w-100
+                                            .hstack.gap-2
+                                                #filecount.opacity-50 #[span 총] #[span#nowcount 0개]#[span#maxcount 0개]
+                                                span ·
+                                                #filesize #[span#nowsize 0.00MB]#[span#maxsize 0MB]
+                                                input#input-attach.d-none(
+                                                    type="file",
+                                                    name="file",
+                                                    multiple=""
+                                                )
+                                    .card-body.p-0.scroll-item
+                                        ul#dropbox.list-group.list-group-flush
+                                span.text-danger #[i.bi.bi-exclamation-circle] 민감 정보 또는 개인 정보를 포함하는 파일을 등록하지 마세요.
+                            .hstack.justify-content-end.gap-3
+                                a.btn.btn-board.btn-outline-primary(href="#") 임시저장
+                                a.btn.btn-board.btn-primary(href="#") 저장
+                a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록
+
+block scripts
+    script(src="/src/lib/prism.js") 
