@@ -1,4 +1,4 @@
-extends ../templates/base
+extends ../../templates/base
 
 block contents
     +breadcrumb(["Automation Store", "등록"])
@@ -8,28 +8,21 @@ block contents
                 h2.fw-bold Automation Store 등록
                 .card
                     .card-body.p-5
-                        span.d-block.text-end.text-danger #[sup ●] 항목은 필수 입력 사항입니다.
+                        span.d-block.text-end.text-danger #[sup *] 항목은 필수 입력 사항입니다.
                         .vstack.gap-4
                             .row.g-4
                                 .col-12.col-lg-6
                                     .vstack.gap-2
-                                        label.form-label.fw-bold(
+                                        label.form-label.fw-bold.required(
                                             for="fileCategory"
-                                        ) 분류 #[sup.text-danger ●]
+                                        ) 분류
                                         select#fileCategory.form-select
-                                            option(value="all") 전체
-                                .col-12.col-lg-6
-                                    .vstack.gap-2
-                                        label.form-label.fw-bold(
-                                            for="fileSolution"
-                                        ) 솔루션 #[sup.text-danger ●]
-                                        select#fileSolution.form-select
                                             option(value="all") 전체
                                 .col.col-12.col-lg-6
                                     .vstack.gap-2
-                                        label.form-label.fw-bold(
+                                        label.form-label.fw-bold.required(
                                             for="fileTypeRadio"
-                                        ) 구분 #[sup.text-danger ●]
+                                        ) 구분
                                         #fileTypeRadio.btn-group(role="group")
                                             input#typePrivate.btn-check(
                                                 type="radio",
@@ -48,19 +41,11 @@ block contents
                                             label.btn.btn-outline-primary(
                                                 for="typePublic"
                                             ) Public
-                                .col-12.col-lg-6
-                                    .vstack.gap-2
-                                        label.form-label.fw-bold(
-                                            for="fileVersion"
-                                        ) 버전 #[sup.text-danger ●]
-                                        input#fileVersion.form-control(
-                                            type="text"
-                                        )
                                 .col-12
                                     .vstack.gap-2
-                                        label.form-label.fw-bold(
+                                        label.form-label.fw-bold.required(
                                             for="fileTitle"
-                                        ) 제목 #[sup.text-danger ●]
+                                        ) 제목
                                         input#fileTitle.form-control(
                                             type="text"
                                         )
@@ -87,12 +72,13 @@ block contents
                                                 )
                                     .card-body.p-0.scroll-item
                                         ul#dropbox.list-group.list-group-flush
+                                span.text-danger #[i.bi.bi-exclamation-circle] 민감 정보 또는 개인 정보를 포함하는 파일을 등록하지 마세요.
                             .vstack.gap-2
                                 label.form-label.fw-bold(for="fileHashtag") 해시태그
                                 input.tagify.form-control(type="text")
+                                span.text-muted ※ 해시태그는 총 5개까지만 입력할 수 있습니다.
                             .hstack.justify-content-end.gap-3
                                 a.btn.btn-board.btn-outline-primary(href="#") 임시저장
-                                a.btn.btn-board.btn-outline-primary(href="#") 미리보기
                                 a.btn.btn-board.btn-primary(href="#") 저장
                 a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록
 

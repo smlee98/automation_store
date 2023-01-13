@@ -7,9 +7,20 @@ nav.navbar {
     #nav-profile {
         cursor: pointer;
     }
+
+    .nav-link {
+        color: $white !important;
+        font-weight: $font-weight-bold;
+    }
 }
 
 #logo {
     height: 28px;
     width: auto;
+}
+
+#nav-profile img {
+    border-radius: 50rem;
+    width: 2.75rem;
+    height: 2.75rem;
 }

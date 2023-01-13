@@ -3,7 +3,7 @@ $breadcrumb-height: 3rem;
 
 nav[aria-label="breadcrumb"] {
     height: $breadcrumb-height;
-    top: $navbar-height !important;
+    top: calc($navbar-height + 1px) !important;
     background-color: transparent;
     z-index: 1015;
 }

@@ -10,10 +10,11 @@ $btn-font-size-lg: 1rem;
 // navbar
 $navbar-padding-y: $spacer * 1.25;
 $navbar-brand-padding-y: 0;
+$navbar-nav-link-padding-x: 1rem;
 
 // list-group
 $list-group-bg: transparent;
-$list-group-border-color: rgba($white, 0.5);
+$list-group-border-color: rgba(0, 0, 0, 0.13);
 
 // card
 $card-spacer-y: $spacer * 3;

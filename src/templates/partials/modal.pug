@@ -1,0 +1,16 @@
+#searchModal.modal.fade(aria-labelledby="searchModal", aria-hidden="true")
+    .modal-dialog.modal-dialog-centered
+        .modal-content
+            .modal-header
+                .searchWrap
+                    input#searchBar.form-control.form-control-lg(
+                        type="search",
+                        placeholder="검색"
+                    )
+                    button#searchClear
+            .modal-body
+                span#searchCount.d-block.fw-bold.small.text-end 검색 결과 (3개)
+                ul#searchList.list-group.mt-3
+                    a.list-group-item.list-group-item-action(href="#") RPA 소개
+                    a.list-group-item.list-group-item-action(href="#") 한눈에 보는 RPA
+                    a.list-group-item.list-group-item-action(href="#") RPA 제안 팁

@@ -1,0 +1,71 @@
+extends ../../templates/base
+
+block contents
+    a.d-none(href="/src/view/board/board-detail.pug")
+    section
+        .container
+            .vstack.gap-4.py-4
+                h1.fw-bold 라이브러리
+                #top-bar.bar-library.card.border-0
+                    .card-body
+                        .d-flex.flex-column.flex-lg-row.justify-content-lg-between.align-items-lg-center
+                            h5.fw-bold.text-light.mb-4.mb-lg-0 함께 나눌 때 더 쉽고 빨라집니다.
+                            a.btn.btn-lg.btn-light.text-primary.fw-bold(
+                                href="/src/view/board/board-new.pug"
+                            )
+                                .hstack.gap-2.text-center
+                                    i.bi.bi-pencil
+                                    span 라이브러리 등록
+                legend 전체 #[span.text-primary 2]
+                .row.row-cols-1.row-cols-md-2.row-cols-lg-4.g-4
+                    .col
+                        .card.card-item(
+                            onclick="location.href='/board/board-detail.html';"
+                        )
+                            .card-body
+                                .vstack.gap-2
+                                    h4.fw-bold.card-title HTMLAgilityPack
+                                    p.card-text.text-muted .NET Framework의 코드 만으로 HTML 문서를 파싱하고 분석할 수 있는 도구
+                                    .hstack.gap-2
+                                        span.badge.rounded-pill.text-bg-light C#
+                                        span.badge.rounded-pill.text-bg-light .NET
+                                        span.badge.rounded-pill.text-bg-light HTML
+                                hr
+                                .hstack.justify-content-between.text-muted.small
+                                    .hstack.gap-1
+                                        i.bi.bi-person-fill
+                                        span ADMIN
+                                    .hstack.gap-3.justify-content-end.text-muted.small
+                                        .hstack.gap-1
+                                            i.bi.bi-download.lh-1
+                                            span 1
+                                        .hstack.gap-1
+                                            i.bi.bi-chat-square-text.lh-1
+                                            span 5
+                    .col
+                        .card.card-item
+                            .card-body
+                                .vstack.gap-2
+                                    h4.fw-bold.card-title Excel
+                                    p.card-text.text-muted Microsoft Excel의 파일을 불러오고 저장하고 엑셀 내 여러 액션을 수행할 수 있는 도구
+                                    .hstack.gap-2
+                                        span.badge.rounded-pill.text-bg-light C#
+                                        span.badge.rounded-pill.text-bg-light .NET
+                                        span.badge.rounded-pill.text-bg-light MS
+                                        span.badge.rounded-pill.text-bg-light EXCEL
+                                hr
+                                .hstack.justify-content-between.text-muted.small
+                                    .hstack.gap-1
+                                        i.bi.bi-person-fill
+                                        span ADMIN
+                                    .hstack.gap-3.justify-content-end.text-muted.small
+                                        .hstack.gap-1
+                                            i.bi.bi-download.lh-1
+                                            span 1
+                                        .hstack.gap-1
+                                            i.bi.bi-chat-square-text.lh-1
+                                            span 5
+                button.btn.btn-lg.btn-primary.w-100.fw-bold
+                    .hstack.gap-2.justify-content-center
+                        i.bi.bi-chevron-down
+                        span 더보기

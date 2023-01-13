@@ -1,0 +1,17 @@
+.comment-item {
+    min-height: 116px;
+    padding: 1.5rem 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+
+    &:first-child {
+        border-top: 1px solid #dee2e6;
+    }
+}
+
+#attachList .list-group-item {
+    transition: color 0.25s ease-in-out;
+
+    &:hover {
+        color: #41527d !important;
+    }
+}

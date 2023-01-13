@@ -1,0 +1,238 @@
+extends ../../templates/base
+
+block contents
+    +breadcrumb(["Automation Store"])
+    section.half-cover
+        .container
+            .vstack.gap-4.py-4
+                h2.fw-bold Automation Store
+                .card
+                    .card-body.p-5
+                        .vstack.gap-3
+                            .vstack.gap-2
+                                .d-flex.flex-column.flex-lg-row.justify-content-lg-between.align-items-lg-center.gap-2
+                                    h5.text-primary.fw-bold.order-2.order-lg-1 태스크
+                                    .hstack.gap-3.order-1.order-lg-2
+                                        button#modify.btn.btn-outline-secondary
+                                            .hstack.gap-2
+                                                i.bi.bi-pencil
+                                                span 게시글 수정
+                                        button#delete.btn.btn-outline-danger
+                                            .hstack.gap-2
+                                                i.bi.bi-x-lg
+                                                span 게시글 삭제
+                                h4.fw-bold 날짜 계산기
+                            .hstack.gap-1.text-muted.small
+                                i.bi.bi-person-fill
+                                span.fw-bold admin
+                            ul#board-tab.nav.nav-tabs(role="tablist")
+                                li.nav-item(role="presentation")
+                                    button#nav-readme-tab.nav-link.active(
+                                        data-bs-toggle="pill",
+                                        data-bs-target="#nav-readme",
+                                        type="button",
+                                        role="tab",
+                                        aria-controls="nav-readme",
+                                        aria-selected="true"
+                                    )
+                                        span.hstack.gap-2
+                                            i.bi.bi-file-earmark-text
+                                            span Readme
+                                li.nav-item(role="presentation")
+                                    button#nav-version-tab.nav-link(
+                                        data-bs-toggle="pill",
+                                        data-bs-target="#nav-version",
+                                        type="button",
+                                        role="tab",
+                                        aria-controls="nav-version",
+                                        aria-selected="false"
+                                    )
+                                        span.hstack.gap-2
+                                            i.bi.bi-tags-fill
+                                            span Version
+                            .row.gx-5.gy-4.my-n3
+                                .col-12.col-lg-9
+                                    #nav-tabContent.tab-content
+                                        #nav-readme.tab-pane.fade.show.active(
+                                            role="tabpanel",
+                                            aria-labelledby="nav-readme-tab",
+                                            tabindex="0"
+                                        )
+                                            .vstack.gap-4
+                                                div
+                                                    p.text-muted
+                                                        | Javascript를 이용한 날짜 계산 Sample Task입니다.
+                                                        br
+                                                        | ①초라도 안보이면 ②렇게 초조한데
+                                                        br
+                                                        | ③초는 어떻게 기다려 (이야 이야 이야 이야)
+                                                        br
+                                                        | ④랑해 널 사랑해 ⑤늘은 말할거야
+                                                        br
+                                                        | ⑥십억 지구에서 널 만난건
+                                                        br
+                                                        | ⑦럭키야 사랑해 요기조기 한눈팔지 말고 나를봐
+                                                        br
+                                                        | 좋아해 나를 향해 웃는 미소 매일매일 보여줘
+                                                        br
+                                                        | ⑧딱팔딱 뛰는 가슴 ⑨해줘 오 내마음
+                                                        br
+                                                        | ⑩년이 가도 너를 사랑해 언제나 이 맘 변치 않을게
+                                                // 해시태그 샘플 START
+                                                .hstack.gap-3
+                                                    button.btn.btn-outline-primary.rounded-pill(
+                                                        type="button"
+                                                    ) #task
+                                                    button.btn.btn-outline-primary.rounded-pill(
+                                                        type="button"
+                                                    ) #headless
+                                                    button.btn.btn-outline-primary.rounded-pill(
+                                                        type="button"
+                                                    ) #script
+                                                    button.btn.btn-outline-primary.rounded-pill(
+                                                        type="button"
+                                                    ) #simple
+                                                // 해시태그 샘플 END
+                                                // 첨부파일 폼 START
+                                                .hstack.gap-2
+                                                    .hstack.gap-1
+                                                        span 첨부파일
+                                                        span#attachCount.text-primary 2개
+                                                        span#attachSize.text-muted (1.2MB)
+                                                    button.btn.btn-sm.btn-outline-secondary 모두저장
+                                                .card
+                                                    .card-body.p-0
+                                                        #attachList.list-group.list-group-flush
+                                                            a.list-group-item.hstack.gap-2(
+                                                                href="#"
+                                                            )
+                                                                i.bi.bi-download.text-muted
+                                                                span 첨부파일 I.png
+                                                                span.text-muted (1.0MB)
+                                                            a.list-group-item.hstack.gap-2(
+                                                                href="#"
+                                                            )
+                                                                i.bi.bi-download.text-muted
+                                                                span 첨부파일 II.txt
+                                                                span.text-muted (0.2MB)
+                                                // 첨부파일 폼 END
+                                                // 댓글 목록 START
+                                                .card.rounded-4
+                                                    .card-body.p-4
+                                                        .vstack.gap-4
+                                                            legend 댓글 #[b#commentTotal.text-primary 3]
+                                                            .vstack.gap-3
+                                                                textarea#comment-box.form-control(
+                                                                    rows="3",
+                                                                    placeholder="댓글 입력"
+                                                                )
+                                                                .hstack.gap-3.justify-content-end
+                                                                    #typing #[span#nowTyping 0] / #[span#maxTyping.text-muted 200]
+                                                                    button.btn.btn-sm.btn-outline-primary
+                                                                        i.bi.bi-pencil
+                                                                        span 등록
+                                                            #commentList
+                                                                .vstack.gap-3.comment-item
+                                                                    .d-flex.justify-content-between.align-items-center
+                                                                        h6.fw-bold USER1
+                                                                    p.mb-0 감사합니다.
+                                        #nav-version.tab-pane.fade(
+                                            role="tabpanel",
+                                            aria-labelledby="nav-version-tab",
+                                            tabindex="0"
+                                        )
+                                            .vstack.gap-3
+                                                .hstack.gap-3.justify-content-end
+                                                    button#add.btn.btn-outline-primary
+                                                        .hstack.gap-2
+                                                            i.bi.bi-plus-lg
+                                                            span 파일 등록
+                                                    button#remove.btn.btn-outline-danger
+                                                        .hstack.gap-2
+                                                            i.bi.bi-x-lg
+                                                            span 파일 삭제
+                                                .table-responsive
+                                                    table#versionHistory.table.table-bordered
+                                                        thead
+                                                            tr
+                                                                th
+                                                                    .form-check
+                                                                        input#checkAll.form-check-input(
+                                                                            type="checkbox",
+                                                                            value="checkAll"
+                                                                        )
+                                                                th
+                                                                    span 버전
+                                                                th
+                                                                    span 파일명
+                                                                th
+                                                                    span 다운로드 횟수
+                                                                th
+                                                                    span 등록일
+                                                                th
+                                                                    span URL 복사
+                                                        tbody
+                                                            tr
+                                                                td
+                                                                    .form-check
+                                                                        input.form-check-input.board-check(
+                                                                            type="checkbox",
+                                                                            name="boardCheck"
+                                                                        )
+                                                                td
+                                                                    span 1.0
+                                                                td
+                                                                    span DateCalc.zip
+                                                                td
+                                                                    span 1
+                                                                td
+                                                                    span 2023-01-12
+                                                                td
+                                                                    button#listButton.btn.btn-outline-secondary.toastTrigger.w-100
+                                                                        .hstack.gap-1.justify-content-center
+                                                                            i.bi.bi-link-45deg
+                                                                            span 복사
+                                .col-12.col-lg-3
+                                    .vstack.gap-4
+                                        .vstack.gap-2
+                                            span.text-muted.fw-bold 다운로드
+                                            #downloadDiv.hstack.gap-2
+                                                button.btn.btn-primary.w-100
+                                                    .hstack.gap-2.justify-content-center
+                                                        i.bi.bi-download
+                                                        span 다운로드
+                                        hr.my-0
+                                        .vstack.gap-2
+                                            span.text-muted.fw-bold 다운로드 횟수
+                                            h5#totDownCnt 5
+                                        hr.my-0
+                                        .row.g-4
+                                            .col-6
+                                                .vstack.gap-2
+                                                    span.text-muted.fw-bold 버전
+                                                    h5#h_version 1.0
+                                            .col-6
+                                                .vstack.gap-2
+                                                    span.text-muted.fw-bold 파일 크기
+                                                    h5#h_size 30.40KB
+                                        hr.my-0
+                                        .vstack.gap-2
+                                            span.text-muted.fw-bold 최근 수정일
+                                            h5#h_modDt 2020-01-11 13:28
+                a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록
+        .toast-container.position-fixed.bottom-0.end-0.p-3
+            #toastBox.toast(
+                role="alert",
+                aria-live="assertive",
+                aria-atomic="true"
+            )
+                .toast-header
+                    strong.me-auto Bootstrap
+                    small 11 mins ago
+                    button.btn-close(
+                        type="button",
+                        data-bs-dismiss="toast",
+                        aria-label="Close"
+                    )
+                .toast-body
+                    | Hello, world! This is a toast message.

@@ -1,12 +1,10 @@
-$prefix: sm-;
-
 :root {
     --ck-z-default: 100;
     --ck-z-modal: calc(var(--ck-z-default) + 999);
-    --ck-border-radius: var(--#{$prefix}border-radius) !important;
-    --ck-color-base-border: var(--#{$prefix}border-color) !important;
-    --ck-color-focus-border: #{$input-focus-border-color} !important;
-    --ck-font-face: var(--#{$prefix}font-sans-serif) !important;
+    --ck-border-radius: var(--gr-border-radius) !important;
+    --ck-color-base-border: var(--gr-border-color) !important;
+    --ck-color-focus-border: #a0a9be !important;
+    --ck-font-face: var(--gr-font-sans-serif) !important;
     --ck-drop-shadow: null !important;
 }
 

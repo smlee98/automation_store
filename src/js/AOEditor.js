@@ -5,7 +5,11 @@ const editorEnabler = () => {
 
     if (editorEl) {
         editorEl.forEach((el) => {
-            AOEditor.create(el)
+            AOEditor.create(el, {
+                simpleUpload: {
+                    uploadUrl: "upload/image",
+                },
+            })
                 .then((newEditor) => {
                     window.editor = newEditor;
                 })

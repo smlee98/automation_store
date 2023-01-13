@@ -1,18 +1,66 @@
-header.border-bottom.sticky-top
-    nav.navbar.bg-white
+mixin themeToggle(option)
+    .dropdown(class=option)
+        a#bd-theme.btn.btn-light.dropdown-toggle.text-primary.d-inline-flex.align-items-center(
+            href="#",
+            data-bs-toggle="dropdown",
+            aria-expanded="false",
+            data-bs-display="static"
+        )
+            span#bd-icon
+                .hstack.gap-2
+                    i.bi.bi-sun-fill
+        ul.dropdown-menu.dropdown-menu-end.bd-theme-toggles
+            each theme in [{"value": "light", "text": "라이트 모드", "icon" : "bi-sun-fill"}, {"value": "dark", "text": "다크 모드", "icon" : "bi-moon-fill"}, {"value": "auto", "text": "자동", "icon" : "bi-circle-half"}]
+                li
+                    button.dropdown-item(
+                        type="button",
+                        data-theme-value=theme.value
+                    )
+                        .hstack.gap-2
+                            i.bi(class=theme.icon)
+                            span= theme.text
+
+header.bg-primary.text-light.border-bottom.sticky-top
+    nav.navbar.navbar-expand-lg.px-4
         .container
-            .d-flex.justify-content-between.align-items-center.flex-grow-1
-                a.navbar-brand(href="/src/view/index.pug") #[img#logo(src="/src/assets/images/logo.png", alt="logo")]
-                .hstack.gap-3
-                    #nav-profile.dropdown
-                        span.dropdown-toggle(data-bs-toggle="dropdown") #[b admin] #[span (관리자)]
-                        ul.dropdown-menu.dropdown-menu-end
-                            a.dropdown-item(href="/src/view/mypage.pug")
+            a.navbar-brand(href="/src/view/index.pug") #[img#logo(src="/src/assets/images/logo.png", alt="logo")]
+            ul.navbar-nav.me-auto
+                li.nav-item
+                    a.nav-link(href="/") 홈
+                li.nav-item
+                    a.nav-link(href="/src/view/library/index.pug") 라이브러리
+                li.nav-item
+                    a.nav-link(href="#") 코드 조각
+            .hstack.gap-3.d-none.d-lg-flex
+                button#search-btn.btn.btn-outline-light(
+                    data-bs-toggle="modal",
+                    data-bs-target="#searchModal"
+                )
+                    .hstack.gap-2
+                        i.bi.bi-search
+                        span 검색
+                button.btn.btn-light.d-none.d-lg-inline-flex.align-items-center #[img.me-2(src="/src/assets/images/logo_ao3.png", alt="logo_ao3")] #[span 매니저로 이동]
+                +themeToggle
+                #nav-profile.dropdown
+                    img.dropdown-toggle(
+                        src="/src/assets/images/ic_person.png",
+                        data-bs-toggle="dropdown"
+                    )
+                    ul.dropdown-menu.dropdown-menu-end
+                        li.dropdown-item
+                            a.dropdown-link(href="#")
+                                .hstack.gap-1
+                                    b#userId admin
+                                    span#userPos (관리자)
+                        li.dropdown-item
+                            hr.dropdown-divider
+                        li.dropdown-item
+                            a.dropdown-link(href="/src/view/mypage.pug")
                                 .hstack.gap-2
                                     i.bi.bi-person.fs-5.lh-base
                                     span 마이페이지
-                            a.dropdown-item(href="/src/view/login.pug")
+                        li.dropdown-item
+                            a.dropdown-link(href="/src/view/login.pug")
                                 .hstack.gap-2
                                     i.bi.bi-box-arrow-right.fs-5.lh-base
                                     span 로그아웃
-                    button.btn.btn-light.d-none.d-lg-inline-flex.align-items-center #[img.me-2(src="/src/assets/images/logo_ao3.png", alt="logo_ao3")] #[span 매니저로 이동]

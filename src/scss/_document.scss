@@ -71,8 +71,8 @@ legend {
     &.card-item {
         --#{$prefix}card-spacer-y: #{calc($card-spacer-x / 2)};
         --#{$prefix}card-spacer-x: #{calc($card-spacer-x / 2)};
-
         transition: border-color 0.2s ease-in-out;
+        cursor: pointer;
         &:hover {
             border-color: $primary;
         }
@@ -108,4 +108,24 @@ legend {
             border-top-right-radius: 0 !important;
         }
     }
+}
+
+.highlight-item {
+    background-image: linear-gradient(#0000 75%, #41527d40 25%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.5s, color 0.5s;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+}
+
+.highlight-item:hover {
+    background-size: 100% 100%;
+    color: #41527d !important;
+}
+
+label.required:after {
+    content: "*";
+    color: #ff4d4f;
+    margin-left: 0.3rem;
 }
