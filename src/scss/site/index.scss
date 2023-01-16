@@ -144,11 +144,11 @@ figure.table table > :not(caption) > * > * {
 .comment-item {
     min-height: 116px;
     padding: 1.5rem 0.5rem;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--#{$prefix}border-color);
 }
 
 .comment-item:first-child {
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid var(--#{$prefix}border-color);
 }
 
 #attachList .list-group-item {

@@ -129,3 +129,7 @@ label.required:after {
     color: #ff4d4f;
     margin-left: 0.3rem;
 }
+
+.tagify {
+    border: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+}
