@@ -5,6 +5,7 @@ import "ace-builds/src-noconflict/theme-one_dark";
 
 const codeEditorEnabler = () => {
     const codeEditor = ace.edit("codeEditor");
+    const clipboard = document.querySelector("#clipboard");
 
     // Listen For theme changes
     document.documentElement.getAttribute("data-bs-theme") === "light"
@@ -18,6 +19,20 @@ const codeEditorEnabler = () => {
             themeChoice === "dark" && codeEditor.setTheme("ace/theme/one_dark");
         });
     });
+
+    if (clipboard) {
+        const quickadd = () => {
+            clipboard.classList.add("animate");
+            setTimeout(function () {
+                clipboard.classList.remove("animate");
+            }, 200);
+        };
+
+        clipboard.addEventListener("click", () => {
+            navigator.clipboard.writeText(codeEditor.getValue());
+            quickadd();
+        });
+    }
 
     codeEditor.setOptions({
         mode: "ace/mode/csharp",

@@ -25,7 +25,10 @@ block contents
                                 i.bi.bi-person-fill
                                 span.fw-bold admin
                             .vstack.gap-4
-                                #codeEditor.viewMode
+                                #codeWrapper.position-relative
+                                    #codeEditor.viewMode
+                                    button#clipboard.btn.btn-primary.rounded-circle
+                                        i.bi.bi-clipboard2-check
                                 div
                                     p.text-muted
                                         | Javascript를 이용한 날짜 계산 Sample Task입니다.

@@ -39,7 +39,6 @@ header.bg-primary.text-light.border-bottom.sticky-top
                     .hstack.gap-2
                         i.bi.bi-search
                         span 검색
-                button.btn.btn-light.d-none.d-lg-inline-flex.align-items-center #[img.me-2(src="/src/assets/images/logo_ao3.png", alt="logo_ao3")] #[span 매니저로 이동]
                 +themeToggle
                 #nav-profile.dropdown
                     img.dropdown-toggle(
@@ -63,3 +62,12 @@ header.bg-primary.text-light.border-bottom.sticky-top
                                 .hstack.gap-2
                                     i.bi.bi-box-arrow-right.fs-5.lh-base
                                     span 로그아웃
+                        hr.dropdown-divider
+                        li.dropdown-item
+                            a.dropdown-link(href="#")
+                                .hstack.gap-2
+                                    img#logo_ao3(
+                                        src="/src/assets/images/logo_ao3.png",
+                                        alt="logo_ao3"
+                                    )
+                                    span 매니저로 이동
