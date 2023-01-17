@@ -68,6 +68,7 @@ const codeEditorEnabler = () => {
         codeEditor.setValue(
             `public void HelloWorld() {\r\n\t//Say Hello!\r\n\tConsole.WriteLine("Hello World");\r\n}`
         );
+        codeEditor.clearSelection();
     }
 };
 

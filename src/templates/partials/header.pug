@@ -21,53 +21,50 @@ mixin themeToggle(option)
                             span= theme.text
 
 header.bg-primary.text-light.border-bottom.sticky-top
-    nav.navbar.navbar-expand-lg.px-4
+    nav.navbar.navbar-expand-lg.px-lg-4
         .container
-            a.navbar-brand(href="/src/view/index.pug") #[img#logo(src="/src/assets/images/logo.png", alt="logo")]
-            ul.navbar-nav.me-auto
-                li.nav-item
-                    a.nav-link(href="/") 홈
-                li.nav-item
-                    a.nav-link(href="/src/view/library/index.pug") 라이브러리
-                li.nav-item
-                    a.nav-link(href="/src/view/snippet/index.pug") 코드 조각
-            .hstack.gap-3.d-none.d-lg-flex
-                button#search-btn.btn.btn-outline-light(
+            .hstack.justify-content-between.flex-grow-1
+                .hstack.gap-3
+                    a.navbar-brand(href="/src/view/index.pug") #[img#logo(src="/src/assets/images/logo.png", alt="logo")]
+                    ul.navbar-nav.me-auto.d-none.d-lg-flex
+                        li.nav-item
+                            a.nav-link(href="/") 홈
+                        li.nav-item
+                            a.nav-link(href="/src/view/library/index.pug") 라이브러리
+                        li.nav-item
+                            a.nav-link(href="/src/view/snippet/index.pug") 코드 조각
+                button#search-btn.btn.btn-outline-light.d-none.d-lg-block(
                     data-bs-toggle="modal",
                     data-bs-target="#searchModal"
                 )
                     .hstack.gap-2
                         i.bi.bi-search
                         span 검색
-                +themeToggle
-                #nav-profile.dropdown
-                    img.dropdown-toggle(
-                        src="/src/assets/images/ic_person.png",
-                        data-bs-toggle="dropdown"
-                    )
-                    ul.dropdown-menu.dropdown-menu-end
-                        li.dropdown-item
-                            a.dropdown-link(href="#")
-                                .hstack.gap-1
-                                    b#userId admin
-                                    span#userPos (관리자)
-                        hr.dropdown-divider
-                        li.dropdown-item
-                            a.dropdown-link(href="/src/view/mypage.pug")
-                                .hstack.gap-2
-                                    i.bi.bi-person.fs-5.lh-base
-                                    span 마이페이지
-                        li.dropdown-item
-                            a.dropdown-link(href="/src/view/login.pug")
-                                .hstack.gap-2
-                                    i.bi.bi-box-arrow-right.fs-5.lh-base
-                                    span 로그아웃
-                        hr.dropdown-divider
-                        li.dropdown-item
-                            a.dropdown-link(href="#")
-                                .hstack.gap-2
-                                    img#logo_ao3(
-                                        src="/src/assets/images/logo_ao3.png",
-                                        alt="logo_ao3"
-                                    )
-                                    span 매니저로 이동
+                .hstack.gap-3.d-none.d-lg-flex
+                    #nav-profile.dropdown
+                        span.hstack.gap-1.dropdown-toggle(
+                            data-bs-toggle="dropdown"
+                        )
+                            b#userId admin
+                            span#userPos (관리자)
+                        ul.dropdown-menu.dropdown-menu-end
+                            li.dropdown-item
+                                a.dropdown-link(href="/src/view/mypage.pug")
+                                    .hstack.gap-2
+                                        i.bi.bi-person.fs-5.lh-base
+                                        span 마이페이지
+                            li.dropdown-item
+                                a.dropdown-link(href="/src/view/login.pug")
+                                    .hstack.gap-2
+                                        i.bi.bi-box-arrow-right.fs-5.lh-base
+                                        span 로그아웃
+                            hr.dropdown-divider
+                            li.dropdown-item
+                                a.dropdown-link(href="#")
+                                    .hstack.gap-2
+                                        img#logo_ao3(
+                                            src="/src/assets/images/logo_ao3.png",
+                                            alt="logo_ao3"
+                                        )
+                                        span 매니저로 이동
+                    +themeToggle

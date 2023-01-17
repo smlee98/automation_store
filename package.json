@@ -5,7 +5,7 @@
     "scripts": {
         "build": "npm run clean && parcel build --no-optimize --no-scope-hoist ./src/view/index.pug",
         "clean": "rimraf dist && rimraf ./.parcel-cache",
-        "dev": "npm run clean && parcel --port 8090 ./src/view/index.pug",
+        "dev": "npm run clean && parcel --port 9999 ./src/view/index.pug",
         "lint": "eslint ./**/*.js --fix && stylelint ./**/*.scss",
         "server": "babel-node ./server/server.js",
         "start": "nodemon --watch ./package.json --exec npm run dev"
