@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "build": "npm run clean && parcel build --no-optimize --no-scope-hoist ./src/view/index.pug",
+        "build": "npm run clean && parcel build --no-optimize --no-scope-hoist ./src/view/index.pug && parcel serve --no-hmr",
         "clean": "rimraf dist && rimraf ./.parcel-cache",
         "dev": "npm run clean && parcel --port 9999 ./src/view/index.pug",
         "lint": "eslint ./**/*.js --fix && stylelint ./**/*.scss",
@@ -65,7 +65,7 @@
         ".ttf$": "fonts/[name].[type]",
         ".woff$": "fonts/[name].[type]",
         ".woff2$": "fonts/[name].[type]",
-        ".png$": "images/[name].[type]",
+        ".png$": "images/[folder]/[name].[type]",
         ".svg$": "images/[folder]/[name].[type]"
     },
     "type": "module"

@@ -1,0 +1,67 @@
+mixin carousel(carouselId, interval, fileList, classes)
+    .carousel.slide(
+        id=carouselId,
+        data-bs-ride="carousel",
+        data-bs-interval=interval,
+        class=classes
+    )
+        button.carousel-control-prev(
+            type="button",
+            data-bs-target=`#${carouselId}`,
+            data-bs-slide="prev"
+        )
+            span.carousel-control-prev-icon(aria-hidden="true")
+            span.visually-hidden 이전
+        button.carousel-control-next(
+            type="button",
+            data-bs-target=`#${carouselId}`,
+            data-bs-slide="next"
+        )
+            span.carousel-control-next-icon(aria-hidden="true")
+            span.visually-hidden 다음
+
+        .carousel-indicator-wrap.bg-dark-blur
+            .carousel-indicators.container.d-flex.justify-content-center
+                - var index = 0;
+                while index < fileList.length
+                    if index == 0
+                        +carouselIndicator(carouselId, index, "active")
+                    else
+                        +carouselIndicator(carouselId, index)
+
+                    - index++;
+        .carousel-inner
+            each file, index in fileList
+                if index == 0
+                    +carouselItem(file, "active")
+                else
+                    +carouselItem(file)
+
+//- Carousel Parts
+mixin carouselIndicator(carouselId, index, active)
+    button(
+        class=active,
+        type="button",
+        data-bs-target=`#${carouselId}`,
+        data-bs-slide-to=index,
+        aria-current=index,
+        aria-label=`Slide ${index}`
+    )
+        .indicator-number
+            h5= index + 1
+        span
+
+mixin carouselItem(file, active)
+    .carousel-item(class=active)
+        img.d-block(src=`/src/assets/images/slider/${file}`)
+        .carousel-caption.text-md-start
+            .container(data-aos="fade-up")
+                h1.fw-bold Robotic Process Automation
+                p.fs-5.d-none.d-md-block
+                    | 반복적인 일은 로봇에게 맡기고 생산성에 집중하세요.
+                    br
+                    | 로봇과 함께 업무 효율은 높이고, 비용은 절감할 수 있습니다.
+                button.btn.btn-light.py-2.px-3.mt-5
+                    .hstack.gap-2
+                        span 자세히
+                        i.bi.bi-chevron-right

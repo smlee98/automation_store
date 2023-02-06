@@ -1,0 +1,215 @@
+extends ../../templates/base
+
+mixin cardBoard(option)
+    .row.row-cols-1.row-cols-md-2.row-cols-lg-4.g-4
+        .col
+            .card.card-item(onclick="location.href='/store/store-detail.html'")
+                .card-body
+                    .vstack.gap-3.h-100
+                        .vstack.gap-2.flex-grow-1
+                            .d-flex.justify-content-between.align-items-center
+                                h5.text-primary.fw-bold 스크립트
+                                .hstack.gap-3.justify-content-end.text-muted.small
+                                    .hstack.gap-1
+                                        i.bi.bi-download.lh-1
+                                        span 1
+                                    .hstack.gap-1
+                                        i.bi.bi-chat-square-text.lh-1
+                                        span 5
+                            h4.fw-bold.card-title 대법원 사건조회
+                            .hstack.flex-wrap.gap-2.my-1
+                                span.badge.rounded-pill.text-bg-light #task
+                                span.badge.rounded-pill.text-bg-light #headless
+                                span.badge.rounded-pill.text-bg-light #script
+                                span.badge.rounded-pill.text-bg-light #simple
+                        .hstack.justify-content-between.align-items-end.text-muted.small
+                            .vstack.gap-2
+                                .hstack.gap-1
+                                    i.bi.bi-grid-3x3-gap-fill.lh-1
+                                    span 스크립트 : 대법원 사건조회 스크립트
+                                .hstack.gap-1
+                                    i.bi.bi-person-fill.lh-1
+                                    span 등록자 : ADMIN
+                            span v1.3
+        .col
+            .card.card-item
+                .card-body
+                    .vstack.gap-3.h-100
+                        .vstack.gap-2.flex-grow-1
+                            .d-flex.justify-content-between.align-items-center
+                                h5.text-primary.fw-bold 기타
+                                .hstack.gap-3.justify-content-end.text-muted.small
+                                    .hstack.gap-1
+                                        i.bi.bi-download.lh-1
+                                        span 1
+                                    .hstack.gap-1
+                                        i.bi.bi-chat-square-text.lh-1
+                                        span 5
+                            h4.fw-bold.card-title 날짜 계산기
+                            .hstack.flex-wrap.gap-2.my-1
+                                span.badge.rounded-pill.text-bg-light #task
+                                span.badge.rounded-pill.text-bg-light #headless
+                                span.badge.rounded-pill.text-bg-light #script
+                                span.badge.rounded-pill.text-bg-light #simple
+                        .hstack.justify-content-between.align-items-end.text-muted.small
+                            .hstack.gap-1
+                                i.bi.bi-person-fill.lh-1
+                                span 등록자 : ADMIN
+                            span v1.3
+        .col
+            .card.card-item
+                .card-body
+                    .vstack.gap-3.h-100
+                        .vstack.gap-2.flex-grow-1
+                            .d-flex.justify-content-between.align-items-center
+                                h5.text-primary.fw-bold 태스크
+                                .hstack.gap-3.justify-content-end.text-muted.small
+                                    .hstack.gap-1
+                                        i.bi.bi-download.lh-1
+                                        span 1
+                                    .hstack.gap-1
+                                        i.bi.bi-chat-square-text.lh-1
+                                        span 5
+                            h4.fw-bold.card-title 날짜 계산기
+                            .hstack.flex-wrap.gap-2.my-1
+                                span.badge.rounded-pill.text-bg-light #task
+                                span.badge.rounded-pill.text-bg-light #headless
+                                span.badge.rounded-pill.text-bg-light #script
+                                span.badge.rounded-pill.text-bg-light #simple
+                        .hstack.justify-content-between.align-items-end.text-muted.small
+                            .vstack.gap-2
+                                .hstack.gap-1
+                                    i.bi.bi-grid-3x3-gap-fill.lh-1
+                                    span 태스크 : 날짜_계산기
+                                .hstack.gap-1
+                                    i.bi.bi-person-fill.lh-1
+                                    span 등록자 : ADMIN
+                            span v1.3
+        .col
+            .card.card-item
+                .card-body
+                    .vstack.gap-3.h-100
+                        .vstack.gap-2.flex-grow-1
+                            .d-flex.justify-content-between.align-items-center
+                                h5.text-primary.fw-bold 태스크
+                                .hstack.gap-3.justify-content-end.text-muted.small
+                                    .hstack.gap-1
+                                        i.bi.bi-download.lh-1
+                                        span 1
+                                    .hstack.gap-1
+                                        i.bi.bi-chat-square-text.lh-1
+                                        span 5
+                            h4.fw-bold.card-title 날짜 계산기
+                            .hstack.flex-wrap.gap-2.my-1
+                                span.badge.rounded-pill.text-bg-light #task
+                                span.badge.rounded-pill.text-bg-light #headless
+                                span.badge.rounded-pill.text-bg-light #script
+                                span.badge.rounded-pill.text-bg-light #simple
+                        .hstack.justify-content-between.align-items-end.text-muted.small
+                            .vstack.gap-2
+                                .hstack.gap-1
+                                    i.bi.bi-grid-3x3-gap-fill.lh-1
+                                    span 태스크 : 날짜_계산기
+                                .hstack.gap-1
+                                    i.bi.bi-person-fill.lh-1
+                                    span 등록자 : ADMIN
+                            span v1.3
+
+block contents
+    a.d-none(href="/src/view/store/store-detail.pug")
+    section
+        .container
+            .vstack.gap-4.py-4
+                h1.fw-bold 스토어
+                #top-bar.bar-home.card.border-0
+                    .card-body.py-4
+                        .d-flex.flex-column.flex-lg-row.justify-content-lg-between.align-items-lg-center
+                            h5.fw-bold.text-light.mb-4.mb-lg-0 함께 나눌 때 더 쉽고 빨라집니다.
+                            a.btn.btn-lg.btn-light.text-primary.fw-bold(
+                                href="/src/view/store/store-new.pug"
+                            )
+                                .hstack.gap-2.text-center
+                                    i.bi.bi-pencil
+                                    span 스토어 등록
+                ul#storeTab.nav.nav-tabs(role="tablist")
+                    li.nav-item(role="presentation")
+                        button#all-tab.nav-link.active(
+                            data-bs-toggle="tab",
+                            data-bs-target="#all-tab-pane",
+                            type="button",
+                            role="tab",
+                            aria-controls="home-tab-pane",
+                            aria-selected="true"
+                        )
+                            .hstack.gap-1
+                                span.tab-title 전체
+                                span.tab-count (16)
+                    li.nav-item(role="presentation")
+                        button#script-tab.nav-link(
+                            data-bs-toggle="tab",
+                            data-bs-target="#script-tab-pane",
+                            type="button",
+                            role="tab",
+                            aria-controls="profile-tab-pane",
+                            aria-selected="false"
+                        )
+                            .hstack.gap-1
+                                span.tab-title 스크립트
+                                span.tab-count (8)
+                    li.nav-item(role="presentation")
+                        button#task-tab.nav-link(
+                            data-bs-toggle="tab",
+                            data-bs-target="#task-tab-pane",
+                            type="button",
+                            role="tab",
+                            aria-controls="contact-tab-pane",
+                            aria-selected="false"
+                        )
+                            .hstack.gap-1
+                                span.tab-title 태스크
+                                span.tab-count (4)
+                    li.nav-item(role="presentation")
+                        button#etc-tab.nav-link(
+                            data-bs-toggle="tab",
+                            data-bs-target="#etc-tab-pane",
+                            type="button",
+                            role="tab",
+                            aria-controls="disabled-tab-pane",
+                            aria-selected="false"
+                        )
+                            .hstack.gap-1
+                                span.tab-title 기타
+                                span.tab-count (4)
+                #myTabContent.tab-content
+                    #all-tab-pane.tab-pane.fade.show.active(
+                        role="tabpanel",
+                        aria-labelledby="all-tab",
+                        tabindex="0"
+                    )
+                        .vstack.gap-4
+                            +cardBoard
+                            +pagination
+                    #script-tab-pane.tab-pane.fade(
+                        role="tabpanel",
+                        aria-labelledby="script-tab",
+                        tabindex="0"
+                    )
+                        .vstack.gap-4
+                            +cardBoard
+                            +pagination
+                    #task-tab-pane.tab-pane.fade(
+                        role="tabpanel",
+                        aria-labelledby="task-tab",
+                        tabindex="0"
+                    )
+                        .vstack.gap-4
+                            +cardBoard
+                            +pagination
+                    #etc-tab-pane.tab-pane.fade(
+                        role="tabpanel",
+                        aria-labelledby="etc-tab",
+                        tabindex="0"
+                    )
+                        .vstack.gap-4
+                            +cardBoard
+                            +pagination

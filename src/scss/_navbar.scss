@@ -4,6 +4,10 @@ $breadcrumb-height: 3rem;
 nav.navbar {
     height: $navbar-height !important;
 
+    .navbar-brand {
+        margin: 0 !important;
+    }
+
     #nav-profile {
         cursor: pointer;
     }
@@ -11,6 +15,35 @@ nav.navbar {
     .nav-link {
         color: $white !important;
         font-weight: $font-weight-bold;
+    }
+}
+
+.nav.nav-tabs {
+    .nav-link {
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out !important;
+
+        &.focus,
+        &:focus {
+            border: none !important;
+        }
+
+        &.hover,
+        &:hover {
+            border: none !important;
+            border-bottom: 3px solid rgba($primary, 0.5) !important;
+            color: rgba($primary, 0.5) !important;
+        }
+
+        &.active {
+            border: none !important;
+            border-bottom: 3px solid $primary !important;
+            color: $primary !important;
+            font-weight: $font-weight-bold;
+        }
+
+        &:not(.active) {
+            color: $secondary;
+        }
     }
 }
 

@@ -1,0 +1,16 @@
+extends ../templates/login
+
+block contents
+    section.vh-100.vw-100
+        .container.h-100
+            .vstack.gap-2.justify-content-center.align-items-center.h-100
+                .vstack.gap-2.text-center.flex-grow-0
+                    span#errCode.fw-bold.text-primary.display-1 404
+                    span#errText.fw-bold.fs-1 찾으시는 페이지가 없습니다.
+                .ratio.ratio-16x9.w-75
+                    img(
+                        src="/src/assets/images/not_found.png",
+                        alt="Page Not Found"
+                    )
+                span#errSubtext.text-muted.text-center.lh-base.fs-4 잘못된 접근이거나 요청하신 페이지를 찾을 수 없습니다. #[br] 입력하신 페이지의 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.
+                a#goHome.btn.btn-lg.rounded-pill.mt-5(href="/") 메인화면으로 이동

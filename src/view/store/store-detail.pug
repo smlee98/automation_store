@@ -22,9 +22,9 @@ block contents
                                                 i.bi.bi-x-lg
                                                 span 게시글 삭제
                                 h4.fw-bold 날짜 계산기
-                            .hstack.gap-1.text-muted.small
-                                i.bi.bi-person-fill
-                                span.fw-bold admin
+                            .hstack.gap-1.text-muted
+                                i.bi.bi-grid-3x3-gap-fill.lh-1
+                                span.fw-bold 태스크 : 날짜_계산기
                             ul#board-tab.nav.nav-tabs(role="tablist")
                                 li.nav-item(role="presentation")
                                     button#nav-readme-tab.nav-link.active(
@@ -37,7 +37,7 @@ block contents
                                     )
                                         span.hstack.gap-2
                                             i.bi.bi-file-earmark-text
-                                            span Readme
+                                            span 설명
                                 li.nav-item(role="presentation")
                                     button#nav-version-tab.nav-link(
                                         data-bs-toggle="pill",
@@ -49,7 +49,7 @@ block contents
                                     )
                                         span.hstack.gap-2
                                             i.bi.bi-tags-fill
-                                            span Version
+                                            span 버전 관리
                             .row.gx-5.gy-4.my-n3
                                 .col-12.col-lg-9
                                     #nav-tabContent.tab-content
@@ -117,25 +117,23 @@ block contents
                                                                 span.text-muted (0.2MB)
                                                 // 첨부파일 폼 END
                                                 // 댓글 목록 START
-                                                .card.rounded-4
-                                                    .card-body.p-4
-                                                        .vstack.gap-4
-                                                            legend 댓글 #[b#commentTotal.text-primary 3]
-                                                            .vstack.gap-3
-                                                                textarea#comment-box.form-control(
-                                                                    rows="3",
-                                                                    placeholder="댓글 입력"
-                                                                )
-                                                                .hstack.gap-3.justify-content-end
-                                                                    #typing #[span#nowTyping 0] / #[span#maxTyping.text-muted 200]
-                                                                    button.btn.btn-sm.btn-outline-primary
-                                                                        i.bi.bi-pencil
-                                                                        span 등록
-                                                            #commentList
-                                                                .vstack.gap-3.comment-item
-                                                                    .d-flex.justify-content-between.align-items-center
-                                                                        h6.fw-bold USER1
-                                                                    p.mb-0 감사합니다.
+                                                .vstack.gap-4
+                                                    legend 댓글 #[b#commentTotal.text-primary 3]
+                                                    .vstack.gap-3
+                                                        textarea#comment-box.form-control(
+                                                            rows="3",
+                                                            placeholder="댓글 입력"
+                                                        )
+                                                        .hstack.gap-3.justify-content-end
+                                                            #typing #[span#nowTyping 0] / #[span#maxTyping.text-muted 200]
+                                                            button.btn.btn-sm.btn-outline-primary
+                                                                i.bi.bi-pencil
+                                                                span 등록
+                                                    #commentList
+                                                        .vstack.gap-3.comment-item
+                                                            .d-flex.justify-content-between.align-items-center
+                                                                h6.fw-bold USER1
+                                                            p.mb-0 감사합니다.
                                         #nav-version.tab-pane.fade(
                                             role="tabpanel",
                                             aria-labelledby="nav-version-tab",
@@ -195,7 +193,7 @@ block contents
                                 .col-12.col-lg-3
                                     .vstack.gap-4
                                         .vstack.gap-2
-                                            span.text-muted.fw-bold 다운로드
+                                            span.text-muted.fw-bold 최신 파일 다운로드
                                             #downloadDiv.hstack.gap-2
                                                 button.btn.btn-primary.w-100
                                                     .hstack.gap-2.justify-content-center
@@ -219,6 +217,10 @@ block contents
                                         .vstack.gap-2
                                             span.text-muted.fw-bold 최근 수정일
                                             h5#h_modDt 2020-01-11 13:28
+                                        hr.my-0
+                                        .vstack.gap-2
+                                            span.text-muted.fw-bold 등록자
+                                            h5#h_register administrator
                 a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록
         .toast-container.position-fixed.bottom-0.end-0.p-3
             #toastBox.toast(

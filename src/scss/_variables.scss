@@ -17,3 +17,21 @@ $light: #f7f7f7;
 // body
 $body-bg: #ffffff;
 $body-bg-dark: #111828;
+
+// breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 500px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+    xxl: 1600px,
+);
+
+$container-max-widths: (
+    sm: 460px,
+    md: 720px,
+    lg: 940px,
+    xl: 1140px,
+    xxl: 1440px,
+);

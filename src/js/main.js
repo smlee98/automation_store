@@ -5,9 +5,11 @@ import { searchHighlight } from "./_search";
 import { toastController } from "./_customBs";
 import { getCookie, setCookie } from "./_cookie";
 import { themeController } from "./_theme";
+import carouselController from "./_carousel";
 
 /* Bootstrap */
 window.bootstrap = bootstrap;
+carouselController();
 toastController();
 
 /* Cookie */

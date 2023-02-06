@@ -6,6 +6,13 @@
     }
 }
 
+@media screen and (max-width: 1920px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
 html,
 body {
     max-width: 100%;
@@ -35,6 +42,12 @@ a:active {
 
 textarea {
     resize: none !important;
+}
+
+.form-control:read-only,
+.form-control:disabled {
+    background-color: var(--gr-form-control-disabled-bg);
+    opacity: 1;
 }
 
 .vsc-controller {
@@ -71,6 +84,8 @@ legend {
     &.card-item {
         --#{$prefix}card-spacer-y: #{calc($card-spacer-x / 2)};
         --#{$prefix}card-spacer-x: #{calc($card-spacer-x / 2)};
+        height: 260px;
+        max-height: 260px;
         transition: border-color 0.2s ease-in-out;
         cursor: pointer;
         &:hover {
@@ -132,4 +147,24 @@ label.required:after {
 
 .tagify {
     border: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+}
+
+#goHome {
+    width: 180px;
+    height: 60px;
+    padding: 13px 0 19px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #eeeeee;
+    opacity: 0.75;
+    transition: opacity 0.2s ease-in-out;
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
 }

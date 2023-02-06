@@ -41,7 +41,7 @@ block contents
                                             label.btn.btn-outline-primary(
                                                 for="typePublic"
                                             ) Public
-                                .col-12
+                                .col.col-12.col-lg-6
                                     .vstack.gap-2
                                         label.form-label.fw-bold.required(
                                             for="fileTitle"
@@ -49,6 +49,28 @@ block contents
                                         input#fileTitle.form-control(
                                             type="text"
                                         )
+                                .col.col-12.col-lg-6
+                                    .vstack.gap-2.has-validation
+                                        .hstack.justify-content-between
+                                            label.form-label.fw-bold.required(
+                                                for="fileTaskName"
+                                            ) 스크립트 내 태스크명
+                                            .form-check.form-switch
+                                                input#fileTaskNameCustom.form-check-input(
+                                                    type="checkbox",
+                                                    role="switch"
+                                                )
+                                                label.form-check-label(
+                                                    for="fileTaskNameCustom"
+                                                ) 태스크명 사용자화
+                                        input#fileTaskName.form-control(
+                                            type="text",
+                                            name="title",
+                                            required="",
+                                            readonly="true"
+                                        )
+                                        .invalid-feedback 태스크명이 입력되지 않았습니다.
+                                        #taskNameWarning.text-danger.d-none #[i.bi.bi-exclamation-triangle] 태스크명은 공백이나 '_'를 제외한 특수문자를 입력할 수 없습니다.
                             .vstack.gap-2
                                 label.form-label.fw-bold(for="fileEditor") 내용
                                 #fileEditor.editor
@@ -81,6 +103,36 @@ block contents
                                 a.btn.btn-board.btn-outline-primary(href="#") 임시저장
                                 a.btn.btn-board.btn-primary(href="#") 저장
                 a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록
+
+    script.
+        const taskNameToggle = document.querySelector("#fileTaskNameCustom");
+        const fileTitleInput = document.querySelector("#fileTitle");
+        const taskNameInput = document.querySelector("#fileTaskName");
+
+        //- var regExp = /[ \{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
+        const regExp = /[ \{\}\[\]\/?.,;:|\)*~`!^\-+┼<>@\#$%&\'\"\\\(\=]/gi;
+        const checkExp = (value) => {
+            const taskNameWarning = document.querySelector("#taskNameWarning");
+            console.log(value);
+            if (regExp.test(value)) {
+                taskNameWarning.classList.remove("d-none");
+            } else {
+                taskNameWarning.classList.add("d-none");
+            }
+        };
+
+        taskNameToggle.addEventListener("change", (e) => {
+            if (e.target.checked) taskNameInput.removeAttribute("readonly");
+            else taskNameInput.setAttribute("readonly", true);
+        });
+
+        fileTitleInput.addEventListener("change", (e) => {
+            if (taskNameToggle.checked === false) taskNameInput.value = e.target.value.replace(" ", "_").replace(regExp, "");
+        });
+
+        taskNameInput.addEventListener("keydown", (e) => {
+            checkExp(e.target.value);
+        });
 
 block scripts
     script(src="/src/js/AOEditor.js", type="module") 

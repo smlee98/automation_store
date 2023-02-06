@@ -19,3 +19,17 @@ $list-group-border-color: rgba(0, 0, 0, 0.13);
 // card
 $card-spacer-y: $spacer * 3;
 $card-spacer-x: $spacer * 3;
+
+// Carousels
+$carousel-indicator-width: 100%;
+$carousel-indicator-height: 2px;
+$carousel-indicator-bg-height: 4.25rem; // customized
+$carousel-indicator-spacer: 0;
+$carousel-indicator-active-bg: rgba($white, 0.5);
+$carousel-indicator-active-opacity: 1;
+$carousel-control-width: 15%;
+
+$carousel-caption-width: 70%;
+$carousel-caption-color: $white;
+$carousel-caption-padding-y: 1.25rem;
+$carousel-caption-spacer: 1.25rem;
