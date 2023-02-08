@@ -2,7 +2,7 @@ import preloader from "./_preloader";
 import * as bootstrap from "bootstrap";
 import { checkComment, checkItems } from "./_input";
 import { searchHighlight } from "./_search";
-import { toastController } from "./_customBs";
+import { toastController, tooltipController } from "./_customBs";
 import { getCookie, setCookie } from "./_cookie";
 import { themeController } from "./_theme";
 import carouselController from "./_carousel";
@@ -11,6 +11,7 @@ import carouselController from "./_carousel";
 window.bootstrap = bootstrap;
 carouselController();
 toastController();
+tooltipController();
 
 /* Cookie */
 getCookie();

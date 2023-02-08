@@ -118,19 +118,20 @@ mixin cardBoard(option)
 block contents
     a.d-none(href="/src/view/store/store-detail.pug")
     section
+        #top-bar.bar-home.py-5
+            .container
+                .hstack.justify-content-between
+                    .vstack.gap-2
+                        h1.fw-bold.text-light 스토어
+                        h5.fw-bold.text-light.mb-4.mb-lg-0 함께 나눌 때 더 쉽고 빨라집니다.
+                    a.btn.btn-lg.btn-light.text-primary.fw-bold(
+                        href="/src/view/store/store-new.pug"
+                    )
+                        .hstack.gap-2.text-center
+                            i.bi.bi-pencil
+                            span 스토어 등록
         .container
             .vstack.gap-4.py-4
-                h1.fw-bold 스토어
-                #top-bar.bar-home.card.border-0
-                    .card-body.py-4
-                        .d-flex.flex-column.flex-lg-row.justify-content-lg-between.align-items-lg-center
-                            h5.fw-bold.text-light.mb-4.mb-lg-0 함께 나눌 때 더 쉽고 빨라집니다.
-                            a.btn.btn-lg.btn-light.text-primary.fw-bold(
-                                href="/src/view/store/store-new.pug"
-                            )
-                                .hstack.gap-2.text-center
-                                    i.bi.bi-pencil
-                                    span 스토어 등록
                 ul#storeTab.nav.nav-tabs(role="tablist")
                     li.nav-item(role="presentation")
                         button#all-tab.nav-link.active(
@@ -138,7 +139,7 @@ block contents
                             data-bs-target="#all-tab-pane",
                             type="button",
                             role="tab",
-                            aria-controls="home-tab-pane",
+                            aria-controls="all-tab-pane",
                             aria-selected="true"
                         )
                             .hstack.gap-1
@@ -150,7 +151,7 @@ block contents
                             data-bs-target="#script-tab-pane",
                             type="button",
                             role="tab",
-                            aria-controls="profile-tab-pane",
+                            aria-controls="script-tab-pane",
                             aria-selected="false"
                         )
                             .hstack.gap-1
@@ -162,7 +163,7 @@ block contents
                             data-bs-target="#task-tab-pane",
                             type="button",
                             role="tab",
-                            aria-controls="contact-tab-pane",
+                            aria-controls="task-tab-pane",
                             aria-selected="false"
                         )
                             .hstack.gap-1

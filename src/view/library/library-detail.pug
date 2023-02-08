@@ -10,7 +10,8 @@ block contents
                     .card-body.p-5
                         .vstack.gap-3
                             .vstack.gap-2
-                                .d-flex.flex-column.flex-lg-row.justify-content-lg-end.align-items-lg-center.gap-2
+                                .d-flex.flex-column.flex-lg-row.justify-content-lg-between.align-items-lg-center.gap-2
+                                    h5.text-primary.fw-bold.order-2.order-lg-1 라이브러리
                                     .hstack.gap-3.order-1.order-lg-2
                                         button#modify.btn.btn-outline-secondary
                                             .hstack.gap-2
@@ -21,9 +22,6 @@ block contents
                                                 i.bi.bi-x-lg
                                                 span 게시글 삭제
                                 h4.fw-bold HTMLAgilityPack
-                            .hstack.gap-1.text-muted.small
-                                i.bi.bi-person-fill
-                                span.fw-bold admin
                             ul#board-tab.nav.nav-tabs(role="tablist")
                                 li.nav-item(role="presentation")
                                     button#nav-readme-tab.nav-link.active(
@@ -113,25 +111,23 @@ block contents
                                                                 span.text-muted (0.2MB)
                                                 // 첨부파일 폼 END
                                                 // 댓글 목록 START
-                                                .card.rounded-4
-                                                    .card-body.p-4
-                                                        .vstack.gap-4
-                                                            legend 댓글 #[b#commentTotal.text-primary 3]
-                                                            .vstack.gap-3
-                                                                textarea#comment-box.form-control(
-                                                                    rows="3",
-                                                                    placeholder="댓글 입력"
-                                                                )
-                                                                .hstack.gap-3.justify-content-end
-                                                                    #typing #[span#nowTyping 0] / #[span#maxTyping.text-muted 200]
-                                                                    button.btn.btn-sm.btn-outline-primary
-                                                                        i.bi.bi-pencil
-                                                                        span 등록
-                                                            #commentList
-                                                                .vstack.gap-3.comment-item
-                                                                    .d-flex.justify-content-between.align-items-center
-                                                                        h6.fw-bold USER1
-                                                                    p.mb-0 감사합니다.
+                                                .vstack.gap-4
+                                                    legend 댓글 #[b#commentTotal.text-primary 3]
+                                                    .vstack.gap-3
+                                                        textarea#comment-box.form-control(
+                                                            rows="3",
+                                                            placeholder="댓글 입력"
+                                                        )
+                                                        .hstack.gap-3.justify-content-end
+                                                            #typing #[span#nowTyping 0] / #[span#maxTyping.text-muted 200]
+                                                            button.btn.btn-sm.btn-outline-primary
+                                                                i.bi.bi-pencil
+                                                                span 등록
+                                                    #commentList
+                                                        .vstack.gap-3.comment-item
+                                                            .d-flex.justify-content-between.align-items-center
+                                                                h6.fw-bold USER1
+                                                            p.mb-0 감사합니다.
                                         #nav-version.tab-pane.fade(
                                             role="tabpanel",
                                             aria-labelledby="nav-version-tab",
@@ -165,8 +161,6 @@ block contents
                                                                     span 다운로드 횟수
                                                                 th
                                                                     span 등록일
-                                                                th
-                                                                    span URL 복사
                                                         tbody
                                                             tr
                                                                 td
@@ -183,15 +177,10 @@ block contents
                                                                     span 1
                                                                 td
                                                                     span 2023-01-12
-                                                                td
-                                                                    button#listButton.btn.btn-outline-secondary.toastTrigger.w-100
-                                                                        .hstack.gap-1.justify-content-center
-                                                                            i.bi.bi-link-45deg
-                                                                            span 복사
                                 .col-12.col-lg-3
                                     .vstack.gap-4
                                         .vstack.gap-2
-                                            span.text-muted.fw-bold 다운로드
+                                            span.text-muted.fw-bold 최신 파일 다운로드
                                             #downloadDiv.hstack.gap-2
                                                 button.btn.btn-primary.w-100
                                                     .hstack.gap-2.justify-content-center
@@ -199,13 +188,13 @@ block contents
                                                         span 다운로드
                                         hr.my-0
                                         .vstack.gap-2
-                                            span.text-muted.fw-bold 다운로드 횟수
+                                            span.text-muted.fw-bold 총 다운로드 횟수
                                             h5#totDownCnt 5
                                         hr.my-0
                                         .row.g-4
                                             .col-6
                                                 .vstack.gap-2
-                                                    span.text-muted.fw-bold 버전
+                                                    span.text-muted.fw-bold 최신 파일 버전
                                                     h5#h_version 1.0
                                             .col-6
                                                 .vstack.gap-2
@@ -215,4 +204,8 @@ block contents
                                         .vstack.gap-2
                                             span.text-muted.fw-bold 최근 수정일
                                             h5#h_modDt 2020-01-11 13:28
+                                        hr.my-0
+                                        .vstack.gap-2
+                                            span.text-muted.fw-bold 등록자
+                                            h5#h_register administrator
                 a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록

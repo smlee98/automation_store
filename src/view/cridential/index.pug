@@ -1,0 +1,156 @@
+extends ../../templates/base
+
+mixin cardBoard(option)
+    .row.row-cols-1.row-cols-md-2.row-cols-lg-4.g-4
+        .col
+            .card.card-item(
+                onclick="location.href='/cridential/account-detail.html'"
+            )
+                .card-body
+                    .vstack.gap-3.h-100
+                        .vstack.gap-2.flex-grow-1
+                            h5.text-primary.fw-bold 계정
+                            h4.fw-bold.card-title 그리드원 관리자 계정
+                        .vstack.gap-2.justify-content-end.text-muted.small
+                            .hstack.gap-1
+                                i.bi.bi-clock
+                                span 등록일 : 2023-02-07 18:27
+                            .hstack.gap-1
+                                i.bi.bi-person-fill.lh-1
+                                span 등록자 : ADMIN
+        .col
+            .card.card-item(
+                onclick="location.href='/cridential/account-detail.html'"
+            )
+                .card-body
+                    .vstack.gap-3.h-100
+                        .vstack.gap-2.flex-grow-1
+                            h5.text-primary.fw-bold 계정
+                            h4.fw-bold.card-title 그리드원 관리자 계정
+                        .vstack.gap-2.justify-content-end.text-muted.small
+                            .hstack.gap-1
+                                i.bi.bi-clock
+                                span 등록일 : 2023-02-07 18:27
+                            .hstack.gap-1
+                                i.bi.bi-person-fill.lh-1
+                                span 등록자 : ADMIN
+        .col
+            .card.card-item(
+                onclick="location.href='/cridential/auth-detail.html'"
+            )
+                .card-body
+                    .vstack.gap-3.h-100
+                        .vstack.gap-2.flex-grow-1
+                            h5.text-primary.fw-bold 보안인증서
+                            h4.fw-bold.card-title 그리드원 관리자 계정
+                        .vstack.gap-2.justify-content-end.text-muted.small
+                            .hstack.gap-1
+                                i.bi.bi-clock
+                                span 등록일 : 2023-02-07 18:27
+                            .hstack.gap-1
+                                i.bi.bi-person-fill.lh-1
+                                span 등록자 : ADMIN
+        .col
+            .card.card-item(
+                onclick="location.href='/cridential/auth-detail.html'"
+            )
+                .card-body
+                    .vstack.gap-3.h-100
+                        .vstack.gap-2.flex-grow-1
+                            h5.text-primary.fw-bold 보안인증서
+                            h4.fw-bold.card-title 그리드원 관리자 계정
+                        .vstack.gap-2.justify-content-end.text-muted.small
+                            .hstack.gap-1
+                                i.bi.bi-clock
+                                span 등록일 : 2023-02-07 18:27
+                            .hstack.gap-1
+                                i.bi.bi-person-fill.lh-1
+                                span 등록자 : ADMIN
+
+block contents
+    a.d-none(href="/src/view/cridential/account-detail.pug")
+    section
+        #top-bar.bar-cridential.py-5
+            .container
+                .hstack.justify-content-between
+                    .vstack.gap-2
+                        h1.fw-bold.text-light 보안 저장소
+                        h5.fw-bold.text-light.mb-4.mb-lg-0 함께 나눌 때 더 쉽고 빨라집니다.
+                    .btn-group
+                        a.btn.btn-lg.btn-light.text-primary.fw-bold.border-end(
+                            href="/src/view/cridential/account-new.pug"
+                        )
+                            .hstack.gap-2.justify-content-center
+                                i.bi.bi-person-fill-add.fs-5
+                                span 계정 등록
+                        .vr.h-100
+                        a.btn.btn-lg.btn-light.text-primary.fw-bold(
+                            href="/src/view/cridential/auth-new.pug"
+                        )
+                            .hstack.gap-2.justify-content-center
+                                i.bi.bi-person-fill-lock.fs-5
+                                span 보안인증서 등록
+        .container
+            .vstack.gap-4.py-4
+                ul#storeTab.nav.nav-tabs(role="tablist")
+                    li.nav-item(role="presentation")
+                        button#all-tab.nav-link.active(
+                            data-bs-toggle="tab",
+                            data-bs-target="#all-tab-pane",
+                            type="button",
+                            role="tab",
+                            aria-controls="all-tab-pane",
+                            aria-selected="true"
+                        )
+                            .hstack.gap-1
+                                span.tab-title 전체
+                                span.tab-count (16)
+                    li.nav-item(role="presentation")
+                        button#account-tab.nav-link(
+                            data-bs-toggle="tab",
+                            data-bs-target="#account-tab-pane",
+                            type="button",
+                            role="tab",
+                            aria-controls="account-tab-pane",
+                            aria-selected="true"
+                        )
+                            .hstack.gap-1
+                                span.tab-title 계정
+                                span.tab-count (8)
+                    li.nav-item(role="presentation")
+                        button#auth-tab.nav-link(
+                            data-bs-toggle="tab",
+                            data-bs-target="#auth-tab-pane",
+                            type="button",
+                            role="tab",
+                            aria-controls="auth-tab-pane",
+                            aria-selected="false"
+                        )
+                            .hstack.gap-1
+                                span.tab-title 보안인증서
+                                span.tab-count (8)
+                #myTabContent.tab-content
+                    #all-tab-pane.tab-pane.fade.show.active(
+                        role="tabpanel",
+                        aria-labelledby="all-tab",
+                        tabindex="0"
+                    )
+                        .vstack.gap-4
+                            +cardBoard
+                            +pagination
+                    #account-tab-pane.tab-pane.fade(
+                        role="tabpanel",
+                        aria-labelledby="account-tab",
+                        tabindex="0"
+                    )
+                        .vstack.gap-4
+                            +cardBoard
+                            +pagination
+                    #auth-tab-pane.tab-pane.fade(
+                        role="tabpanel",
+                        aria-labelledby="auth-tab",
+                        tabindex="0"
+                    )
+                        .vstack.gap-4
+                            +cardBoard
+                            +pagination

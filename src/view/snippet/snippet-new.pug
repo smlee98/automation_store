@@ -52,8 +52,9 @@ block contents
                                         )
                             .vstack.gap-2
                                 label.form-label.fw-bold(for="fileEditor") 내용
-                                #codeWrapper.position-relative
-                                    #codeEditor
+                                .card
+                                    .card-body.code-snippet
+                                        #codeEditor.code-editor
                             .vstack.gap-2
                                 .d-flex.justify-content-between.align-items-center.form-label
                                     label.fw-bold(for="fileAttach") 첨부파일
@@ -78,11 +79,12 @@ block contents
                             .vstack.gap-2
                                 label.form-label.fw-bold(for="fileHashtag") 해시태그
                                 input.tagify.form-control(type="text")
-                                span.text-muted ※ 해시태그는 총 5개까지만 입력할 수 있습니다.
+                                span.text-muted ※ 각 해시태그는 10글자를 넘길 수 없고, 총 5개까지만 입력할 수 있습니다.
                             .hstack.justify-content-end.gap-3
-                                a.btn.btn-board.btn-outline-primary(href="#") 임시저장
                                 a.btn.btn-board.btn-primary(href="#") 저장
-                a.btn.btn-board.btn-secondary(href="/src/view/index.pug") 목록
+                a.btn.btn-board.btn-secondary(
+                    href="/src/view/snippet/index.pug"
+                ) 목록
 
 block scripts
     script(src="/src/js/CodeEditor.js", type="module") 

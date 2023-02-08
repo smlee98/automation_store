@@ -25,10 +25,17 @@ block contents
                                 i.bi.bi-person-fill
                                 span.fw-bold admin
                             .vstack.gap-4
-                                #codeWrapper.position-relative
-                                    #codeEditor.viewMode
-                                    button#clipboard.btn.btn-primary.rounded-circle.toastTrigger
-                                        i.bi.bi-clipboard2-check
+                                .card
+                                    .card-header
+                                        .hstack.justify-content-between
+                                            small.text-muted C#
+                                            span#clipboard(
+                                                data-bs-toggle="tooltip",
+                                                data-bs-title="클립보드에 복사"
+                                            )
+                                                i.bi.bi-clipboard2-check
+                                    .card-body.code-snippet
+                                        #codeEditor.code-editor.viewMode
                                 div
                                     p.text-muted
                                         | Javascript를 이용한 날짜 계산 Sample Task입니다.
@@ -84,40 +91,23 @@ block contents
                                                 span.text-muted (0.2MB)
                                 // 첨부파일 폼 END
                                 // 댓글 목록 START
-                                .card.rounded-4
-                                    .card-body.p-4
-                                        .vstack.gap-4
-                                            legend 댓글 #[b#commentTotal.text-primary 3]
-                                            .vstack.gap-3
-                                                textarea#comment-box.form-control(
-                                                    rows="3",
-                                                    placeholder="댓글 입력"
-                                                )
-                                                .hstack.gap-3.justify-content-end
-                                                    #typing #[span#nowTyping 0] / #[span#maxTyping.text-muted 200]
-                                                    button.btn.btn-sm.btn-outline-primary
-                                                        i.bi.bi-pencil
-                                                        span 등록
-                                            #commentList
-                                                .vstack.gap-3.comment-item
-                                                    .d-flex.justify-content-between.align-items-center
-                                                        h6.fw-bold USER1
-                                                    p.mb-0 감사합니다.
-        .toast-container.position-fixed.bottom-0.end-0.p-3
-            #toastBox.toast(
-                role="alert",
-                aria-live="assertive",
-                aria-atomic="true"
-            )
-                .toast-header
-                    strong.me-auto 클립보드에 복사
-                    button.btn-close(
-                        type="button",
-                        data-bs-dismiss="toast",
-                        aria-label="Close"
-                    )
-                .toast-body
-                    span 코드 조각이 클립보드에 복사되었습니다.
+                                .vstack.gap-4
+                                    legend 댓글 #[b#commentTotal.text-primary 3]
+                                    .vstack.gap-3
+                                        textarea#comment-box.form-control(
+                                            rows="3",
+                                            placeholder="댓글 입력"
+                                        )
+                                        .hstack.gap-3.justify-content-end
+                                            #typing #[span#nowTyping 0] / #[span#maxTyping.text-muted 200]
+                                            button.btn.btn-sm.btn-outline-primary
+                                                i.bi.bi-pencil
+                                                span 등록
+                                    #commentList
+                                        .vstack.gap-3.comment-item
+                                            .d-flex.justify-content-between.align-items-center
+                                                h6.fw-bold USER1
+                                            p.mb-0 감사합니다.
 
 block scripts
     script(src="/src/js/CodeEditor.js", type="module") 

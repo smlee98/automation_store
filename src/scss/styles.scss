@@ -72,8 +72,12 @@
 @import "root";
 @import "navbar";
 @import "breadcrumb";
+@import "pagination";
 @import "carousel";
 @import "table";
 @import "scrollbar";
 @import "searchbar";
 @import "editor";
+
+// Library
+@import "/node_modules/@yaireo/tagify/src/tagify.scss";

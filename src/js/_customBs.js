@@ -11,3 +11,13 @@ export const toastController = () => {
         });
     }
 };
+
+export const tooltipController = () => {
+    const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+    );
+
+    [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new window.bootstrap.Tooltip(tooltipTriggerEl)
+    );
+};
