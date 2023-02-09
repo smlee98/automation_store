@@ -233,22 +233,25 @@ block contents
     section
         a.d-none(href="/src/view/error.pug")
         .container
-            .vstack.gap-4.py-4
-                .hstack.justify-content-between
-                    legend.w-auto 스토어 #[span.text-primary 16]
-                    a.btn.hstack.gap-1.fw-bold.text-muted.small(href="#")
-                        span 전체보기
-                        i.bi.bi-chevron-right.lh-1
-                +cardBoard("store")
-                .hstack.justify-content-between
-                    legend 라이브러리 #[span.text-primary 16]
-                    a.btn.hstack.gap-1.fw-bold.text-muted.small(href="#")
-                        span 전체보기
-                        i.bi.bi-chevron-right.lh-1
-                +cardBoard
-                .hstack.justify-content-between
-                    legend 코드조각 #[span.text-primary 16]
-                    a.btn.hstack.gap-1.fw-bold.text-muted.small(href="#")
-                        span 전체보기
-                        i.bi.bi-chevron-right.lh-1
-                +cardBoard
+            .vstack.gap-5.py-4
+                .vstack.gap-4
+                    .hstack.justify-content-between
+                        legend.w-auto 스토어 #[span.text-primary 16]
+                        a.btn.hstack.gap-1.fw-bold.text-muted.small(href="#")
+                            span 전체보기
+                            i.bi.bi-chevron-right.lh-1
+                    +cardBoard("store")
+                .vstack.gap-4
+                    .hstack.justify-content-between
+                        legend 라이브러리 #[span.text-primary 16]
+                        a.btn.hstack.gap-1.fw-bold.text-muted.small(href="#")
+                            span 전체보기
+                            i.bi.bi-chevron-right.lh-1
+                    +cardBoard
+                .vstack.gap-4
+                    .hstack.justify-content-between
+                        legend 코드조각 #[span.text-primary 16]
+                        a.btn.hstack.gap-1.fw-bold.text-muted.small(href="#")
+                            span 전체보기
+                            i.bi.bi-chevron-right.lh-1
+                    +cardBoard

@@ -1,17 +1,17 @@
 extends ../../templates/base
 
 block contents
-    +breadcrumb(["Automation Store", "보안 저장소", "계정"])
+    +breadcrumb(["Automation Store", "보안 저장소", "보안 인증서"])
     section.half-cover
         .container
             .vstack.gap-4.py-4
-                h2.fw-bold 보안 인증서
+                h2.fw-bold 보안 저장소
                 .card
                     .card-body.p-5
                         .vstack.gap-3
                             .vstack.gap-2
                                 .d-flex.flex-column.flex-lg-row.justify-content-lg-between.align-items-lg-center.gap-2
-                                    h5.text-primary.fw-bold.order-2.order-lg-1 계정
+                                    h5.text-primary.fw-bold.order-2.order-lg-1 보안 인증서
                                     .hstack.gap-3.order-1.order-lg-2
                                         button#modify.btn.btn-outline-primary(
                                             data-bs-toggle="modal",
@@ -67,8 +67,17 @@ block contents
                                     .col-12.col-lg-3
                                         .vstack.gap-4
                                             .vstack.gap-2
-                                                span.text-muted.fw-bold 아이디
-                                                h5#boardId ad***
+                                                span.text-muted.fw-bold 보안 인증서 다운로드
+                                                #downloadDiv.hstack.gap-2
+                                                    button.btn.btn-primary.w-100
+                                                        .hstack.gap-2.justify-content-center
+                                                            i.bi.bi-download
+                                                            span 다운로드
+                                                small.text-muted 마스킹 해제 후, 파일을 다운로드 받을 수 있습니다.
+                                            hr.my-0
+                                            .vstack.gap-2
+                                                span.text-muted.fw-bold 보안 인증서
+                                                h5#boardId ad***.cer
                                             hr.my-0
                                             .vstack.gap-2
                                                 span.text-muted.fw-bold 비밀번호

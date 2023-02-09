@@ -14,3 +14,24 @@
                     a.list-group-item.list-group-item-action(href="#") RPA 소개
                     a.list-group-item.list-group-item-action(href="#") 한눈에 보는 RPA
                     a.list-group-item.list-group-item-action(href="#") RPA 제안 팁
+
+#pwCheckModal.modal.fade(
+    tabindex="-1",
+    aria-labelledby="pwCheckModal",
+    aria-hidden="true"
+)
+    .modal-dialog.modal-sm.modal-dialog-centered.modal-dialog-scrollable
+        .modal-content.text-center
+            .modal-body
+                .vstack.gap-3
+                    .vstack.gap-2
+                        i.bi.bi-exclamation-triangle.opacity-25.display-1
+                        span 마스킹 해제를 위해 #[br] 비밀번호 확인이 필요합니다.
+                    input.form-control(type="password")
+            .modal-footer.justify-content-center
+                .hstack.gap-3.w-100
+                    button.btn.btn-lg.btn-primary.w-100 확인
+                    button.btn.btn-lg.btn-secondary.w-100(
+                        data-bs-dismiss="modal",
+                        aria-label="Close"
+                    ) 취소

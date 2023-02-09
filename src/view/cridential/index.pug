@@ -41,7 +41,7 @@ mixin cardBoard(option)
                 .card-body
                     .vstack.gap-3.h-100
                         .vstack.gap-2.flex-grow-1
-                            h5.text-primary.fw-bold 보안인증서
+                            h5.text-primary.fw-bold 인증서
                             h4.fw-bold.card-title 그리드원 관리자 계정
                         .vstack.gap-2.justify-content-end.text-muted.small
                             .hstack.gap-1
@@ -57,7 +57,7 @@ mixin cardBoard(option)
                 .card-body
                     .vstack.gap-3.h-100
                         .vstack.gap-2.flex-grow-1
-                            h5.text-primary.fw-bold 보안인증서
+                            h5.text-primary.fw-bold 인증서
                             h4.fw-bold.card-title 그리드원 관리자 계정
                         .vstack.gap-2.justify-content-end.text-muted.small
                             .hstack.gap-1
@@ -69,27 +69,20 @@ mixin cardBoard(option)
 
 block contents
     a.d-none(href="/src/view/cridential/account-detail.pug")
+    a.d-none(href="/src/view/cridential/auth-detail.pug")
     section
         #top-bar.bar-cridential.py-5
             .container
                 .hstack.justify-content-between
                     .vstack.gap-2
                         h1.fw-bold.text-light 보안 저장소
-                        h5.fw-bold.text-light.mb-4.mb-lg-0 함께 나눌 때 더 쉽고 빨라집니다.
-                    .btn-group
-                        a.btn.btn-lg.btn-light.text-primary.fw-bold.border-end(
-                            href="/src/view/cridential/account-new.pug"
-                        )
-                            .hstack.gap-2.justify-content-center
-                                i.bi.bi-person-fill-add.fs-5
-                                span 계정 등록
-                        .vr.h-100
-                        a.btn.btn-lg.btn-light.text-primary.fw-bold(
-                            href="/src/view/cridential/auth-new.pug"
-                        )
-                            .hstack.gap-2.justify-content-center
-                                i.bi.bi-person-fill-lock.fs-5
-                                span 보안인증서 등록
+                        h5.fw-bold.text-light.mb-4.mb-lg-0 나만의 계정 정보들과 인증서를 관리해보세요.
+                    a.btn.btn-lg.btn-light.text-primary.fw-bold(
+                        href="/src/view/cridential/cridential-new.pug"
+                    )
+                        .hstack.gap-2.justify-content-center
+                            i.bi.bi-pencil-fill
+                            span 등록
         .container
             .vstack.gap-4.py-4
                 ul#storeTab.nav.nav-tabs(role="tablist")
@@ -127,7 +120,7 @@ block contents
                             aria-selected="false"
                         )
                             .hstack.gap-1
-                                span.tab-title 보안인증서
+                                span.tab-title 인증서
                                 span.tab-count (8)
                 #myTabContent.tab-content
                     #all-tab-pane.tab-pane.fade.show.active(

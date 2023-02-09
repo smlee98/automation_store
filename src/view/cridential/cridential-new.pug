@@ -1,17 +1,25 @@
 extends ../../templates/base
 
 block contents
-    +breadcrumb(["Automation Store", "보안 저장소", "보안인증서 등록"])
+    +breadcrumb(["Automation Store", "보안 저장소", "등록"])
     section
         .container
             .vstack.gap-4.py-4
-                h2.fw-bold 보안인증서 등록
+                h2.fw-bold 보안 저장소 등록
                 .card
                     .card-body.p-5
                         span.d-block.text-end.text-danger #[sup *] 항목은 필수 입력 사항입니다.
                         .vstack.gap-4
                             .row.g-4
-                                .col-12
+                                .col-12.col-lg-6
+                                    .vstack.gap-2
+                                        label.form-label.fw-bold.required(
+                                            for="fileCategory"
+                                        ) 분류
+                                        select#fileCategory.form-select
+                                            option(value="account", selected) 계정
+                                            option(value="auth") 인증서
+                                .col-12.col-lg-6
                                     .vstack.gap-2
                                         label.form-label.fw-bold.required(
                                             for="fileTitle"
@@ -19,10 +27,16 @@ block contents
                                         input#fileTitle.form-control(
                                             type="text"
                                         )
-                                .col-12.col-lg-6
+                                #accountArea.col-12.col-lg-6
                                     .vstack.gap-2
                                         label.form-label.fw-bold.required(
                                             for="fileId"
+                                        ) 아이디
+                                        input#fileId.form-control(type="text")
+                                #authArea.col-12.col-lg-6.d-none
+                                    .vstack.gap-2
+                                        label.form-label.fw-bold.required(
+                                            for="fileAuth"
                                         ) 인증서 파일
                                         input#fileAuth.form-control(
                                             type="file"
@@ -37,8 +51,31 @@ block contents
                                                 type="password"
                                             )
                                             i#passwordToggle.bi.bi-eye
+                            .vstack.gap-2
+                                label.form-label.fw-bold(for="fileEditor") 내용
+                                #fileEditor.editor
                             .hstack.justify-content-end.gap-3
                                 a.btn.btn-board.btn-primary(href="#") 저장
                 a.btn.btn-board.btn-secondary(
                     href="/src/view/cridential/index.pug"
                 ) 목록
+
+    script.
+        const accountArea = document.querySelector("#accountArea");
+        const authArea = document.querySelector("#authArea");
+        const categoryToggle = document.querySelector("#fileCategory");
+
+        categoryToggle.addEventListener("change", (e) => {
+            const selectedEl = e.target.options[e.target.selectedIndex].value;
+
+            if (selectedEl === "account") {
+                accountArea.classList.remove("d-none");
+                authArea.classList.add("d-none");
+            } else {
+                authArea.classList.remove("d-none");
+                accountArea.classList.add("d-none");
+            }
+        });
+
+block scripts
+    script(src="/src/js/AOEditor.js", type="module") 
